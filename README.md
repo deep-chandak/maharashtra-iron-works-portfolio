@@ -1,238 +1,394 @@
-Maharashtra Iron Works — Inventory Management & Analytics
-A portfolio project combining a QR-based inventory management website, Google Sheets, Python-generated transaction data, MySQL/SQL analysis, and a five-page Power BI dashboard.
-The project addresses two business needs:
-Inventory management: make product information and stock updates easier than paper-based recordkeeping.
-Inventory analytics: analyse stock movements, product performance, stock risk, and estimated revenue through Power BI.
-> **Data transparency:** The transaction history was generated using Python for analytical purposes. Some analytical fields, such as cost prices and reorder levels, may be simulated. Findings based on simulated data are illustrative and should not be treated as verified historical business performance.
+# Maharashtra Iron Works — Inventory Management & Analytics
+
+### QR-Based Inventory Management | Google Apps Script | Google Sheets | Python | MySQL | Power BI
+
+## Project Overview
+
+This project demonstrates an end-to-end inventory management and analytics solution developed around the operational requirements of Maharashtra Iron Works.
+
+The project combines a QR-based inventory website, Google Sheets integration, Python-generated transaction data, MySQL analysis, and a five-page Power BI dashboard.
+
+The solution addresses two major business needs:
+
+- **Inventory Management:** Replace manual pen-and-paper stock tracking with a digital system for checking products, adding stock, recording sold stock, and maintaining transaction records.
+- **Inventory Analytics:** Analyze product performance, stock movements, estimated sales revenue, and inventory risks through SQL queries and Power BI dashboards.
+
+> **Data Transparency:** Transaction history used for analytical purposes was generated using Python. Some analytical fields, including cost prices and reorder levels, may be simulated. Findings based on simulated data should be treated as illustrative rather than verified historical business performance.
+
 ---
-Contents
-Business Problem
-Project Objectives
-Solution Overview
-QR-Based Inventory Website
-Google Sheets Inventory Data
-Python Transaction Data Generation
-MySQL and SQL Analysis
-Power BI Dashboard
-Key Metrics and Findings
-Technology Stack
-Project Structure
-How to Explore the Project
-Data Notes and Limitations
-Future Improvements
-Author
+
+## 1. Business Problem
+
+Traditional inventory management using manual registers can create operational challenges:
+
+- Difficulty checking available stock quickly
+- Time-consuming stock additions and deductions
+- Limited visibility into product details and storage locations
+- Risk of manual recording errors
+- Difficulty maintaining transaction history
+- Limited reporting and inventory analytics
+
+The objective was to create a more accessible digital inventory workflow and demonstrate how inventory data can support business decisions.
+
 ---
-1. Business Problem
-Maharashtra Iron Works handles a range of hardware and iron-work products, including fasteners, tools, electrical items, welding supplies, and other stock.
-Traditional paper-based stock tracking can create several challenges:
-Checking product availability can take time.
-Stock records may not always match the physical quantity on the shelf.
-Recording incoming and sold stock manually requires effort.
-Workers may need to search for product prices, codes, and rack locations.
-Without organised transaction history, it is difficult to analyse fast-moving products and stock movement over time.
-This project explores a digital inventory workflow alongside a separate analytics solution for understanding stock movement and business performance.
-2. Project Objectives
-Provide quick access to product information through QR codes.
-Make product and stock information easier for workers to access.
-Provide a PIN-protected admin page for managing inventory.
-Use Google Sheets as the website's inventory data source.
-Generate transaction records using Python for analytical purposes.
-Use MySQL and SQL to work with structured data and perform queries.
-Build an interactive Power BI dashboard for inventory and revenue analysis.
-Document the technology, workflow, results, and data limitations.
-3. Solution Overview
-The project consists of two related components.
-A. Operational inventory system
-QR code → Google Apps Script website → Google Sheets
-Workers can scan a product QR code to view product details and use the available stock actions. An administrator can access a separate PIN-protected page to browse products and manage stock.
-Inventory changes made through the website are reflected in the connected Google Sheets data.
-B. Analytics workflow
-Product data + Python-generated transactions → MySQL/SQL analysis → Power BI
-Python was used to generate transaction records for analysis. Data was also imported into or worked with in MySQL, where SQL queries were used to inspect and analyse structured data before reporting in Power BI.
-These are related parts of the project, but they should not be interpreted as one fully automated, real-time pipeline. The Python-generated transaction history is analytical data; automatic synchronisation between the website, MySQL, and Power BI is not claimed.
-4. QR-Based Inventory Website
-The website was developed using Google Apps Script, with HTML, CSS, and JavaScript for the web interface. Google Sheets serves as the inventory data source.
-4.1 Worker-facing QR product page
-Each product can be accessed through its QR code. Workers can scan the code using a phone and open the corresponding product page.
-The page displays product information such as:
-Product name and product code
-Product image
-Brand and category
-Material and size
-Selling price
-Current stock and availability
-Rack location, where available
-The page also provides stock actions for recording additions and sold or removed quantities, according to the website's implemented functionality.
-4.2 PIN-protected admin inventory page
-The website includes a separate admin page protected by a PIN. It provides a product-card interface for browsing and managing inventory.
-Features include:
-PIN-protected admin access
-Product browsing and product information
-Stock quantity and availability display
-Add-stock and remove-stock actions
-Access to product QR codes
-Inventory changes reflected in the connected Google Sheets data
-4.3 Business benefits
-The website aims to reduce dependence on handwritten stock registers, make product information easier to find, and simplify the recording of stock additions and removals.
-Security note: Never publish the admin PIN, private deployment URLs, credentials, or other sensitive information in the repository or screenshots.
-5. Google Sheets Inventory Data
-Google Sheets serves as the inventory data source connected to the Apps Script website.
-The product information used in the project includes fields such as:
-Product ID or product code
-Product name
-Brand and category
-Material and size
-Selling price
-Current stock
-Reorder level, where included in the analytical dataset
-When stock is changed through the website, the corresponding inventory data is updated in Google Sheets. This provides a shared operational inventory record for the website and spreadsheet.
-The analytical dataset and generated transaction history should be treated separately from the operational inventory unless a specific import or integration has been configured.
-6. Python Transaction Data Generation
-Python was used to generate transaction records for inventory analytics. This provided a dataset for database querying and Power BI reporting without presenting the generated history as verified real sales.
-The analytical dataset contains 1,296 simulated stock-in and stock-out transactions across 300 products, covering May to early October 2026.
-The data-generation process includes:
-Generating simulated stock-in and stock-out records.
-Associating transactions with products, dates, quantities, transaction types, and staff names.
-Introducing patterns such as varying product movement and periodic restocking.
-Checking generated transaction history against product stock values.
-Avoiding negative stock quantities in the generated sequence.
-If included in the repository, the Python script can be documented as `make_simulated_data.py`. The README and setup instructions should use the actual script path present in the project.
-Important: These transactions are simulated analytical data, not verified historical sales from Maharashtra Iron Works.
-7. MySQL and SQL Analysis
-MySQL was used as part of the data-analysis workflow before Power BI.
-Data from spreadsheet or CSV sources was imported into or worked with in MySQL. SQL queries were used to retrieve, inspect, and analyse structured data.
-The database work can be documented under the following activities, where supported by the actual project files:
-Importing data from Excel, CSV, or spreadsheet exports.
-Creating and working with database tables.
-Inspecting product and transaction records.
-Writing SQL queries to filter, sort, group, and summarise data.
-Analysing stock-in and stock-out movements.
-Preparing or validating data for reporting.
-MySQL Workbench was used to work with the database and execute SQL queries.
-If available, include the actual SQL scripts, table definitions, and query screenshots in the repository. The exact schema and queries should be documented from the files you actually used rather than reconstructed from assumptions.
-The README does not claim a direct live connection between the website's Google Sheets and MySQL.
-8. Power BI Dashboard
-The Power BI report contains five pages, each designed to analyse a different aspect of inventory and sales-related data.
-Dashboard page	Purpose
-Inventory Overview	Summarises transactions, products, stock units, stock-in versus stock-out, and movement by category.
-Monthly Trends	Compares stock-in and stock-out quantities by month. The final month in the dataset is partial.
-Product Analysis	Shows the top 10 products by stock-out quantity, with a category filter.
-Stock Risk	Compares each product's current stock against its reorder level and displays its stock status.
-Sales & Revenue Analysis	Presents estimated revenue and product/category revenue comparisons.
-Measures and calculations
-The report includes measures for:
-Total transactions
-Total products
-Total stock
-Stock-in quantity
-Stock-out quantity
-Stock movement difference
-Stock-out share
-Estimated total revenue
-Revenue is calculated using stock-out quantity multiplied by the product's selling price.
-Because the transaction data does not store the selling price at the time of each transaction, this is an estimate based on the available product price.
-Dashboard screenshots
-Include screenshots of all five report pages in your `Screenshots/` folder. Update the image paths below to match the actual filenames in your repository.
-Inventory Overview
-Monthly Trends
-Product Analysis
-Stock Risk
-Sales & Revenue Analysis
-Example Markdown for displaying a screenshot:
-`![Power BI Inventory Overview](Screenshots/01-overview.png)`
-9. Key Metrics and Findings
-The following figures come from the analytical dataset and Power BI report. They should not be interpreted as verified real-world business performance.
-Metric	Reported value
-Total transactions	1,296
-Total products	300
-Total stock-out quantity	4,422
-Total stock-in quantity	3,856
-Stock movement difference	-566
-Stock-out share of total movement	53.42%
-Estimated revenue	Approximately ₹984.75K
-Key findings
-1. Stock-out exceeds stock-in
-The generated dataset contains 4,422 stock-out units compared with 3,856 stock-in units, resulting in a difference of -566 units.
-2. Units sold and revenue are different measures
-Products with high unit movement do not necessarily generate the highest revenue. Product prices influence the revenue contribution of each category.
-3. Product performance can be analysed from different perspectives
-The Product Analysis page highlights products with high stock-out quantities, while the Sales & Revenue Analysis page helps compare estimated monetary contribution.
-4. Stock risk depends on reorder levels
-The Stock Risk page compares product stock with reorder levels. In the analysed dataset, products were displayed as having sufficient stock at the time of analysis. This result depends on the available stock data and reorder-level assumptions.
-Recommendations
-Review fast-moving products frequently and establish appropriate minimum-stock levels.
-Monitor high-value product categories as well as products with high unit movement.
-Compare stock-in and stock-out trends when planning replenishment.
-Validate simulated assumptions against actual records before making operational decisions.
-10. Technology Stack
-Technology	Role
-Google Apps Script	Website logic and integration with Google Sheets
-Google Sheets	Operational product and inventory data source
-HTML, CSS, JavaScript	Website interface and interactive functionality
-QR codes	Quick access to product-specific pages
-Python	Generation of simulated transaction data
-pandas and NumPy	Data processing and generation, where used by the Python script
-MySQL	Structured storage and querying of imported analytical data
-MySQL Workbench	Interface for working with tables and SQL queries
-Power BI Desktop	Data modelling, visualisations, and interactive report pages
-DAX	Measures and calculations in the Power BI report
-11. Project Structure
-The following is a suggested structure for organising the portfolio. Keep it aligned with the files and folders that actually exist in your project.
-```text
-Maharashtra-Iron-Works-Portfolio/
-├── README.md
-├── PowerBI/
-│   └── Maharashtra_Iron_Works_Inventory_Analytics.pbix
-├── Website/
-│   ├── Apps Script server code
-│   ├── Worker product page
-│   └── PIN-protected admin page
-├── Screenshots/
-│   ├── Website worker QR page
-│   ├── Website admin page
-│   ├── 01-overview.png
-│   ├── 02-monthly-trends.png
-│   ├── 03-product-analysis.png
-│   ├── 04-stock-risk.png
-│   └── 05-sales-revenue.png
-├── Documentation/
-│   ├── Project requirements
-│   ├── Process flow
-│   └── Testing notes
-├── SQL/
-│   ├── Table definitions (if available)
-│   └── Analysis queries (if available)
-└── Python/
-    ├── Transaction data generation script (if included)
-    └── requirements.txt (if included)
+
+## 2. QR-Based Inventory Management Website
+
+**Technologies:** HTML, CSS, JavaScript, Google Apps Script, Google Sheets
+
+A web-based inventory management interface was developed using Google Apps Script.
+
+### Admin Interface
+
+The administrative interface includes:
+
+- Product listings with images and product details
+- Search by product name, code, brand, category, and rack
+- Current stock quantity and stock-status indicators
+- Stock addition and removal actions
+- Product QR code generation and display
+- Responsive layout for desktop and mobile devices
+
+### Worker QR Interface
+
+Workers can scan a product QR code to access its product information.
+
+The QR-based workflow supports:
+
+- Product identification
+- Product details and stock availability
+- Stock addition
+- Recording sold stock
+- Staff-name entry for sales transactions
+
+### Inventory Update Workflow
+
+1. A user selects or scans a product.
+2. Product information is retrieved through Google Apps Script.
+3. The user enters a stock quantity and performs an available action.
+4. The application processes the stock update.
+5. The corresponding Google Sheets stock value is updated.
+6. A transaction entry is recorded.
+7. Updated inventory information can be viewed through the website.
+
+The system reduces dependence on manual registers and provides a centralized spreadsheet-backed inventory record.
+
+---
+
+## 3. Google Sheets Integration
+
+Google Sheets acts as the operational inventory data store for the website.
+
+### Product Sheet
+
+The product sheet contains information such as:
+
+- Product ID and code
+- Product name
+- Brand and category
+- Product image
+- Selling price
+- Material and size
+- Rack location
+- Current stock
+- QR URL and QR code
+
+### Transaction Sheet
+
+The transaction sheet records:
+
+- Timestamp
+- Product ID
+- Product name
+- Transaction type
+- Quantity
+- Staff name, where applicable
+- Transaction source
+
+The system uses the following transaction conventions:
+
+- **IN:** Stock received or added
+- **OUT:** Stock removed or sold, depending on the operation
+
+Google Apps Script connects the website to the associated spreadsheet and handles inventory updates.
+
+---
+
+## 4. Python — Transaction Data Generation
+
+**Technology:** Python
+
+Python was used to generate simulated transaction data for analytical purposes.
+
+The repository includes:
+
+- `make_simulated_data.py`
+- `products.csv`
+- `transactions.csv`
+
+The generated data supports demonstrations of inventory movement, product activity, and reporting workflows.
+
+This analytical dataset is distinct from the operational transaction records created by the Google Apps Script website.
+
+---
+
+## 5. MySQL Database and SQL Analysis
+
+**Technology:** MySQL
+
+A relational database workflow was developed to organize and analyze product and transaction information.
+
+### SQL Queries
+
+| File | Purpose |
+|---|---|
+| `01_create_database_tables.sql` | Create database tables |
+| `02_transaction_validation.sql` | Validate transaction data |
+| `03_data_quality_summary.sql` | Summarize data quality |
+| `04_transaction_date_range.sql` | Check transaction date coverage |
+| `05_product_count.sql` | Count products |
+| `06_show_tables.sql` | Inspect database tables |
+| `07_category_transaction_analysis.sql` | Analyze transaction counts and quantities by category and transaction type |
+| `08_category_stock_movement.sql` | Summarize stock received and stock removed by category |
+| `09_low_stock_products.sql` | Identify products with low stock |
+
+### Analytical Focus
+
+The SQL work demonstrates:
+
+- Relational joins
+- Aggregations
+- Conditional aggregation
+- Transaction validation
+- Product-level and category-level analysis
+- Stock movement reporting
+- Low-stock identification
+
+---
+
+## 6. Power BI — Inventory Analytics Dashboard
+
+**Technology:** Microsoft Power BI, DAX
+
+A five-page Power BI dashboard was developed to explore inventory and transaction information.
+
+### Dashboard Pages
+
+**Page 1 — Overview**
+
+Provides an overview of key inventory and business metrics.
+
+**Page 2 — Monthly Trend**
+
+Explores transaction and sales activity over time using the available month and year information.
+
+**Page 3 — Product Analysis**
+
+Examines product-level inventory and transaction activity.
+
+**Page 4 — Stock Risk Analysis**
+
+Highlights inventory availability and low-stock or reorder-related risks.
+
+**Page 5 — Sales and Revenue**
+
+Examines sold quantities and estimated sales revenue.
+
+### DAX Measures
+
+DAX was used to calculate business metrics.
+
+For example, total revenue is calculated using transactions classified as `OUT` and the corresponding product selling prices:
+
+```dax
+Total Revenue =
+SUMX(
+    FILTER(
+        Transactions,
+        Transactions[transaction_type] = "OUT"
+    ),
+    Transactions[quantity] *
+    RELATED(product[selling_price])
+)
 ```
-Do not list files as included in the repository until they have actually been added.
-12. How to Explore the Project
-Power BI report
-Open the `.pbix` file in Power BI Desktop to interact with the dashboard pages, charts, and filters. Screenshots can be used to preview the report without opening Power BI.
-Website
-The Apps Script web application must be deployed in the relevant Google account to run. Keep private deployment links and admin credentials secure.
-Google Sheets
-The connected spreadsheet serves as the inventory data source for the website. Avoid publishing private business, staff, or customer information.
-Python and SQL
-If the Python script and SQL files are included, review the script to regenerate the simulated transaction dataset and run the SQL queries against a suitably prepared MySQL database. Update the instructions to match the actual filenames and setup steps.
-13. Data Notes and Limitations
-The transaction history was generated using Python and is simulated; it is not verified historical sales data.
-Any simulated cost prices, supplier details, lead times, or reorder levels should be labelled as assumptions.
-Revenue uses stock-out quantity multiplied by the product's current selling price. This may not equal actual realised revenue, especially if prices changed over time or stock-outs include non-sale removals.
-The final month in the dataset is incomplete, so monthly comparisons should account for the partial period.
-Stock-risk findings depend on the product quantities and reorder levels in the analytical dataset.
-Google Sheets may be appropriate for a small-scale workflow but may require a more robust database and access-control design as usage grows.
-Power BI reflects changes according to the configured data connection and refresh process. The report is not claimed to update instantly after every website stock change.
-14. Future Improvements
-Validate generated transaction history against real business records where permission and reliable data are available.
-Store the selling price at the time of each transaction for more accurate revenue analysis.
-Improve inventory audit history and reporting for stock adjustments.
-Add supplier and purchase-order tracking if required.
-Strengthen access control and review PIN-based authentication before broader deployment.
-Document a repeatable process for loading data into MySQL and refreshing Power BI.
-Include SQL scripts, a data dictionary, testing evidence, and architecture diagrams.
-Consider a more scalable database if transaction volume or concurrent usage grows.
-15. Author
-LinkedIn: https://www.linkedin.com/in/deep-chandak-186957326?utm_source=share_via&utm_content=profile&utm_medium=member_android
-Email: deepchandak7@gmail.com
+
+For the analytical dataset, `OUT` represents sold stock in this revenue calculation.
+
+### Inventory Thresholds
+
+The project uses an example low-stock threshold of 10 units and reorder level of 5 units in its analytical work. Threshold interpretation depends on the relevant calculation or report.
+
+---
+
+## 7. Screenshots
+
+### Power BI Dashboard
+
+**Overview**
+
+![Dashboard Overview](Maharashtra-Iron-Works-Portfolio/screenshots/01_overview.png)
+
+**Monthly Trend**
+
+![Monthly Trend](Maharashtra-Iron-Works-Portfolio/screenshots/02_monthlytrend.png)
+
+**Product Analysis**
+
+![Product Analysis](Maharashtra-Iron-Works-Portfolio/screenshots/03_productanalysis.png)
+
+**Stock Risk Analysis**
+
+![Stock Risk Analysis](Maharashtra-Iron-Works-Portfolio/screenshots/04_stockriskanalysis.png)
+
+**Sales and Revenue**
+
+![Sales and Revenue](Maharashtra-Iron-Works-Portfolio/screenshots/05_salesndrevenue.png)
+
+### QR-Based Inventory Website
+
+**Admin Interface**
+
+![Admin Interface](Maharashtra-Iron-Works-Portfolio/screenshots/website/01_admin%20page.png)
+
+**Admin Stock Management**
+
+![Admin Stock Management](Maharashtra-Iron-Works-Portfolio/screenshots/website/02_admin_stockpage.png)
+
+**Product QR Code**
+
+![Product QR](Maharashtra-Iron-Works-Portfolio/screenshots/website/03_QR_product.png)
+
+**Worker QR Workflow**
+
+![Worker QR](Maharashtra-Iron-Works-Portfolio/screenshots/website/04_worker_qr.png)
+
+**Worker Interface**
+
+![Worker Interface](Maharashtra-Iron-Works-Portfolio/screenshots/website/05_workerpage.png)
+
+**Google Sheets Product Records**
+
+![Google Sheets Products](Maharashtra-Iron-Works-Portfolio/screenshots/website/06_sheet_products.png)
+
+**Saved Transactions**
+
+![Saved Transactions](Maharashtra-Iron-Works-Portfolio/screenshots/website/07_savedtransaction.png)
+
+**Staff Name Recording**
+
+![Staff Names](Maharashtra-Iron-Works-Portfolio/screenshots/website/08_staffnames.png)
+
+---
+
+## 8. Project Structure
+
+```text
+maharashtra-iron-works-portfolio/
+│
+├── README.md
+│
+└── Maharashtra-Iron-Works-Portfolio/
+    │
+    ├── README.md
+    │
+    ├── website/
+    │   ├── admin.html
+    │   ├── Index.html
+    │   └── code.gs
+    │
+    ├── python/
+    │   ├── make_simulated_data.py
+    │   ├── products.csv
+    │   └── transactions.csv
+    │
+    ├── MYSQL/
+    │   ├── 01_create_database_tables.sql
+    │   ├── 02_transaction_validation.sql
+    │   ├── 03_data_quality_summary.sql
+    │   ├── 04_transaction_date_range.sql
+    │   ├── 05_product_count.sql
+    │   ├── 06_show_tables.sql
+    │   ├── 07_category_transaction_analysis.sql
+    │   ├── 08_category_stock_movement.sql
+    │   └── 09_low_stock_products.sql
+    │
+    ├── Power bi/
+    │   └── final.pbix
+    │
+    ├── screenshots/
+    │   ├── 01_overview.png
+    │   ├── 02_monthlytrend.png
+    │   ├── 03_productanalysis.png
+    │   ├── 04_stockriskanalysis.png
+    │   ├── 05_salesndrevenue.png
+    │   └── website/
+    │       └── Website and Google Sheets screenshots
+    │
+    └── documentation/
+        ├── Project_Overview.md
+        ├── Database_Documentation.md
+        ├── PowerBI_Documentation.md
+        ├── Setup_Guide.md
+        └── Limitations_and_Future_Scope.md
+```
+
+---
+
+## 9. Key Skills Demonstrated
+
+- Inventory management workflow design
+- QR-based product identification
+- Google Apps Script web application development
+- Google Sheets integration
+- HTML, CSS, and JavaScript
+- Python data generation
+- MySQL database development
+- SQL querying and data validation
+- Power BI dashboard development
+- DAX measures and data modeling
+- Data visualization and business reporting
+- Technical documentation
+
+---
+
+## 10. Limitations and Future Scope
+
+### Current Limitations
+
+- Analytical transaction data is simulated.
+- Some analytical inventory fields are illustrative.
+- Spreadsheet-based inventory storage may require further optimization as data volume grows.
+- Access control and deployment configuration require appropriate security review before production use.
+
+### Future Improvements
+
+- Stronger user authentication and role-based permissions
+- More detailed audit logs
+- Automated low-stock alerts
+- Enhanced inventory forecasting
+- Improved integration between operational and analytical data
+- Expanded reporting and inventory monitoring
+
+---
+
+## 11. Project Outcome
+
+The project demonstrates how a traditional inventory workflow can be digitized through QR-based product identification, a web interface, and Google Sheets integration.
+
+It also demonstrates how Python, MySQL, and Power BI can be combined to build an analytical reporting workflow for understanding stock movements, product activity, inventory risk, and estimated revenue.
+
+The result is a portfolio project covering both operational inventory management and business intelligence.
+
+---
+
+## 12. Documentation
+
+Additional technical information is available in the `documentation` folder, including the project overview, database documentation, Power BI documentation, setup guide, and limitations and future scope.
+
+---
+
+**Project:** Maharashtra Iron Works — Inventory Management & Analytics
+
+**Technologies:** Google Apps Script, Google Sheets, HTML, CSS, JavaScript, Python, MySQL, Power BI, DAX
+
+**Repository:** https://github.com/deep-chandak/maharashtra-iron-works-portfolio
