@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <base target="_top">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>
+    Maharashtra Iron Works - Inventory
+  </title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7f9;
+      color: #111827;
+    }
+
+    /* =====================================================
+       PAGE
+       ===================================================== */
+
+    .page {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .page-header {
+      margin-bottom: 18px;
+    }
+
+    .page-title {
+      font-size: 25px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0;
+    }
+
+    .page-subtitle {
+      margin-top: 4px;
+      color: #718096;
+      font-size: 14px;
+    }
+
+    /* =====================================================
+       SEARCH
+       ===================================================== */
+
+    .search-area {
+      margin-top: 16px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 52px;
+      padding: 0 48px 0 17px;
+      border: 1px solid #d6dde5;
+      border-radius: 12px;
+      background: #ffffff;
+      outline: none;
+      font-size: 16px;
+      color: #111827;
+      box-shadow:
+        0 2px 7px rgba(15, 23, 42, 0.03);
+    }
+
+    .search-input:focus {
+      border-color: #4d76b8;
+      box-shadow:
+        0 0 0 3px rgba(77, 118, 184, 0.10);
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 21px;
+      color: #718096;
+      pointer-events: none;
+    }
+
+    .search-result {
+      margin-top: 8px;
+      color: #718096;
+      font-size: 13px;
+    }
+
+    /* =====================================================
+       ERROR
+       ===================================================== */
+
+    .error-message {
+      display: none;
+      background: #fff0f0;
+      color: #d62828;
+      border: 1px solid #ffd4d4;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    /* =====================================================
+       LOADING
+       ===================================================== */
+
+    .loading {
+      text-align: center;
+      padding: 50px 20px;
+      color: #718096;
+      font-size: 15px;
+    }
+
+    /* =====================================================
+       GRID
+       ===================================================== */
+
+    .products-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    /* =====================================================
+       CARD
+       ===================================================== */
+
+    .product-card {
+      background: #ffffff;
+      border: 1px solid #dfe5eb;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow:
+        0 2px 7px rgba(15, 23, 42, 0.04);
+    }
+
+    /* =====================================================
+       TOP
+       ===================================================== */
+
+    .product-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      min-height: 214px;
+    }
+
+    /* =====================================================
+       IMAGE
+       ===================================================== */
+
+    .image-box {
+      width: 169px;
+      height: 169px;
+      min-width: 169px;
+      border-radius: 14px;
+      background: #f0f2f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .no-image {
+      color: #9aa5b1;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    /* =====================================================
+       PRODUCT INFO
+       ===================================================== */
+
+    .product-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .product-name {
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 6px;
+    }
+
+    .product-code {
+      color: #718096;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    /* =====================================================
+       DETAILS
+       ===================================================== */
+
+    .details {
+      width: 100%;
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 15px;
+      min-height: 29px;
+      font-size: 16px;
+    }
+
+    .detail-label {
+      color: #718096;
+    }
+
+    .detail-value {
+      color: #111827;
+      text-align: right;
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
+
+    /* =====================================================
+       STATUS
+       ===================================================== */
+
+    .status-row {
+      margin-top: 12px;
+    }
+
+    .stock-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 27px;
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .stock-status.available {
+      color: #07833d;
+      background: #e7f7ee;
+    }
+
+    .stock-status.low {
+      color: #b26a00;
+      background: #fff4d6;
+    }
+
+    .stock-status.zero {
+      color: #d62828;
+      background: #ffe9e9;
+    }
+
+    /* =====================================================
+       DIVIDER
+       ===================================================== */
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: #dfe5eb;
+      margin: 0 0 18px;
+    }
+
+    /* =====================================================
+       STATS
+       ===================================================== */
+
+    .stats {
+      display: grid;
+      grid-template-columns:
+        1fr 1fr 1fr;
+      margin-bottom: 18px;
+    }
+
+    .stat {
+      min-width: 0;
+      padding-right: 18px;
+    }
+
+    .stat + .stat {
+      border-left: 1px solid #dfe5eb;
+      padding-left: 18px;
+    }
+
+    .stat-value {
+      font-size: 21px;
+      font-weight: 700;
+      color: #1656a5;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .stock-number {
+      color: #159447;
+    }
+
+    .stock-number.low {
+      color: #b26a00;
+    }
+
+    .stock-number.zero {
+      color: #d62828;
+    }
+
+    .rack {
+      color: #1656a5;
+    }
+
+    .stat-label {
+      margin-top: 7px;
+      font-size: 14px;
+      color: #718096;
+    }
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .action-button {
+      width: 100%;
+      min-height: 50px;
+      border: 0;
+      border-radius: 11px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.12s;
+    }
+
+    .action-button:active {
+      transform: scale(0.985);
+    }
+
+    .action-button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .add-button {
+      color: #07833d;
+      background: #e5f7ed;
+    }
+
+    .remove-button {
+      color: #e12626;
+      background: #ffe9e9;
+    }
+
+    .qr-button {
+      grid-column: 1 / -1;
+      color: #1859a6;
+      background: #e9f0ff;
+    }
+
+    .add-button:hover {
+      background: #d8f1e3;
+    }
+
+    .remove-button:hover {
+      background: #ffdddd;
+    }
+
+    .qr-button:hover {
+      background: #dfe9ff;
+    }
+
+    /* =====================================================
+       MODAL
+       ===================================================== */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 390px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-title {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .modal-product {
+      color: #718096;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .quantity-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 13px;
+      border: 1px solid #cfd6de;
+      border-radius: 9px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .modal-message {
+      display: none;
+      margin-top: 11px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #fff0f0;
+      color: #d62828;
+      font-size: 13px;
+    }
+
+    .modal-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .modal-button {
+      height: 46px;
+      border: 0;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .cancel-button {
+      background: #eeeeee;
+      color: #333333;
+    }
+
+    .confirm-button {
+      background: #111827;
+      color: #ffffff;
+    }
+
+    /* =====================================================
+       QR MODAL
+       ===================================================== */
+
+    .qr-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .qr-box {
+      width: 100%;
+      max-width: 430px;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+      box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .qr-product-name {
+      margin: 0;
+      color: #111827;
+      font-size: 21px;
+      line-height: 1.3;
+    }
+
+    .qr-product-code {
+      margin-top: 6px;
+      margin-bottom: 17px;
+      color: #718096;
+      font-size: 14px;
+    }
+
+    .qr-image {
+      display: block;
+      width: 300px;
+      height: 300px;
+      max-width: 100%;
+      margin: 0 auto 20px;
+      object-fit: contain;
+      background: #ffffff;
+    }
+
+    .qr-loading {
+      width: 300px;
+      height: 300px;
+      max-width: 100%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #718096;
+      font-size: 14px;
+      background: #f7f8fa;
+      border-radius: 10px;
+    }
+
+    .qr-close {
+      width: 100%;
+      height: 47px;
+      border: 0;
+      border-radius: 9px;
+      background: #111827;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* =====================================================
+       EMPTY
+       ===================================================== */
+
+    .empty {
+      grid-column: 1 / -1;
+      background: #ffffff;
+      border: 1px solid #dfe5eb;
+      border-radius: 15px;
+      padding: 40px 20px;
+      text-align: center;
+      color: #718096;
+    }
+
+    /* =====================================================
+       TABLET
+       ===================================================== */
+
+    @media (max-width: 850px) {
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 600px) {
+
+      .page {
+        padding: 12px;
+      }
+
+      .product-card {
+        padding: 22px;
+      }
+
+      .product-top {
+        gap: 20px;
+      }
+
+      .image-box {
+        width: 145px;
+        height: 145px;
+        min-width: 145px;
+      }
+
+      .product-name {
+        font-size: 21px;
+      }
+
+      .product-code {
+        font-size: 14px;
+      }
+
+      .detail-row {
+        font-size: 14px;
+      }
+
+      .action-button {
+        font-size: 15px;
+      }
+    }
+
+    /* =====================================================
+       SMALL MOBILE
+       ===================================================== */
+
+    @media (max-width: 480px) {
+
+      .product-card {
+        padding: 17px;
+      }
+
+      .product-top {
+        gap: 14px;
+      }
+
+      .image-box {
+        width: 115px;
+        height: 115px;
+        min-width: 115px;
+      }
+
+      .product-name {
+        font-size: 18px;
+      }
+
+      .product-code {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      .detail-row {
+        font-size: 12px;
+        min-height: 25px;
+      }
+
+      .stock-status {
+        font-size: 11px;
+      }
+
+      .stat {
+        padding-right: 8px;
+      }
+
+      .stat + .stat {
+        padding-left: 8px;
+      }
+
+      .stat-value {
+        font-size: 16px;
+      }
+
+      .stat-label {
+        font-size: 11px;
+      }
+
+      .action-button {
+        min-height: 47px;
+        font-size: 14px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ADMIN PIN LOCK
+       ONLY CHANGE ADDED
+       PIN: "password"
+       ===================================================== -->
+
+  <div
+    id="adminLock"
+    style="
+      position:fixed;
+      inset:0;
+      background:#f5f7f9;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:99999;
+      font-family:Arial,Helvetica,sans-serif;
+    "
+  >
+
+    <div
+      style="
+        width:90%;
+        max-width:380px;
+        background:#ffffff;
+        border-radius:18px;
+        padding:32px 26px;
+        text-align:center;
+        box-shadow:0 10px 35px rgba(0,0,0,.12);
+      "
+    >
+
+      <div
+        style="
+          font-size:42px;
+          margin-bottom:12px;
+        "
+      >
+        🔒
+      </div>
+
+      <h2
+        style="
+          margin:0 0 8px;
+          color:#222;
+        "
+      >
+        Admin Access
+      </h2>
+
+      <p
+        style="
+          margin:0 0 22px;
+          color:#777;
+          font-size:14px;
+        "
+      >
+        Enter Admin PIN to continue
+      </p>
+
+      <input
+        id="adminPin"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="Enter PIN"
+        style="
+          width:100%;
+          box-sizing:border-box;
+          padding:14px;
+          border:1px solid #ddd;
+          border-radius:10px;
+          font-size:20px;
+          text-align:center;
+          letter-spacing:8px;
+          outline:none;
+        "
+        onkeydown="
+          if(event.key==='Enter'){
+            unlockAdmin();
+          }
+        "
+      >
+
+      <button
+        onclick="unlockAdmin()"
+        style="
+          width:100%;
+          margin-top:14px;
+          padding:14px;
+          border:0;
+          border-radius:10px;
+          background:#111;
+          color:white;
+          font-size:16px;
+          font-weight:600;
+          cursor:pointer;
+        "
+      >
+        UNLOCK ADMIN
+      </button>
+
+      <div
+        id="pinError"
+        style="
+          display:none;
+          margin-top:12px;
+          color:#d93025;
+          font-size:14px;
+        "
+      >
+        Incorrect PIN
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="page" id="adminContent" style="display:none;">
+
+    <!-- =================================================
+         HEADER
+         ================================================= -->
+
+    <div class="page-header">
+
+      <h1 class="page-title">
+        Maharashtra Iron Works
+      </h1>
+
+      <div class="page-subtitle">
+        Inventory Management
+      </div>
+
+      <!-- SEARCH -->
+
+      <div class="search-area">
+
+        <input
+          id="searchInput"
+          class="search-input"
+          type="search"
+          placeholder="Search product, code, name, brand, category, rack..."
+          autocomplete="off"
+          oninput="searchProducts()">
+
+        <div class="search-icon">
+          🔍
+        </div>
+
+      </div>
+
+      <div
+        id="searchResult"
+        class="search-result">
+
+        Loading products...
+
+      </div>
+
+    </div>
+
+
+    <!-- ERROR -->
+
+    <div
+      id="errorMessage"
+      class="error-message">
+    </div>
+
+
+    <!-- LOADING -->
+
+    <div
+      id="loading"
+      class="loading">
+
+      Loading inventory...
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <div
+      id="productsGrid"
+      class="products-grid">
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       STOCK MODAL
+       ===================================================== -->
+
+  <div
+    id="stockModal"
+    class="modal"
+    onclick="closeModalFromBackground(event)">
+
+    <div
+      class="modal-box"
+      onclick="event.stopPropagation()">
+
+      <div
+        id="modalTitle"
+        class="modal-title">
+
+        Add Stock
+
+      </div>
+
+      <div
+        id="modalProduct"
+        class="modal-product">
+      </div>
+
+      <label
+        class="field-label"
+        for="quantityInput">
+
+        Quantity
+
+      </label>
+
+      <input
+        id="quantityInput"
+        class="quantity-input"
+        type="number"
+        min="1"
+        step="1"
+        inputmode="numeric"
+        placeholder="Enter quantity">
+
+      <div
+        id="modalMessage"
+        class="modal-message">
+      </div>
+
+      <div class="modal-actions">
+
+        <button
+          id="cancelButton"
+          class="modal-button cancel-button"
+          onclick="closeModal()">
+
+          CANCEL
+
+        </button>
+
+        <button
+          id="confirmButton"
+          class="modal-button confirm-button"
+          onclick="confirmAction()">
+
+          CONFIRM
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       QR MODAL
+       ===================================================== -->
+
+  <div
+    id="qrModal"
+    class="qr-modal"
+    onclick="closeQRFromBackground(event)">
+
+    <div
+      class="qr-box"
+      onclick="event.stopPropagation()">
+
+      <h2
+        id="qrProductName"
+        class="qr-product-name">
+
+        Product QR
+
+      </h2>
+
+      <div
+        id="qrProductCode"
+        class="qr-product-code">
+      </div>
+
+      <div
+        id="qrLoading"
+        class="qr-loading"
+        style="display:none;">
+
+        Generating QR...
+
+      </div>
+
+      <img
+        id="qrImage"
+        class="qr-image"
+        src=""
+        alt="Product QR"
+        style="display:none;">
+
+      <button
+        class="qr-close"
+        onclick="closeQR()">
+
+        CLOSE
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+
+    /* =====================================================
+       ADMIN PIN LOCK
+       ONLY CHANGE ADDED
+       PIN: 2580
+       ===================================================== */
+
+    const ADMIN_PIN = "Password";
+
+    function unlockAdmin() {
+
+      const pin =
+        document.getElementById("adminPin").value;
+
+      const error =
+        document.getElementById("pinError");
+
+      if (pin === ADMIN_PIN) {
+
+        document.getElementById(
+          "adminLock"
+        ).style.display = "none";
+
+        document.getElementById(
+          "adminContent"
+        ).style.display = "block";
+
+        error.style.display = "none";
+
+        document.getElementById(
+          "adminPin"
+        ).value = "";
+
+      } else {
+
+        error.style.display = "block";
+
+        document.getElementById(
+          "adminPin"
+        ).value = "";
+
+        document.getElementById(
+          "adminPin"
+        ).focus();
+      }
+    }
+
+
+    /* =====================================================
+       VARIABLES
+       ===================================================== */
+
+    let products = [];
+
+    let filteredProducts = [];
+
+    let selectedProductIndex = -1;
+
+    let selectedAction = "";
+
+    let isUpdating = false;
+
+
+    /* =====================================================
+       LOAD
+       ===================================================== */
+
+    function loadProducts() {
+
+      document.getElementById(
+        "loading"
+      ).style.display = "block";
+
+      google.script.run
+
+        .withSuccessHandler(
+          function(result) {
+
+            products =
+              Array.isArray(result)
+                ? result
+                : [];
+
+            filteredProducts =
+              products.slice();
+
+            document.getElementById(
+              "loading"
+            ).style.display = "none";
+
+            renderProducts();
+
+            updateSearchCount();
+          }
+        )
+
+        .withFailureHandler(
+          function(error) {
+
+            document.getElementById(
+              "loading"
+            ).style.display = "none";
+
+            showError(
+              error &&
+              error.message
+                ? error.message
+                : "Unable to load products."
+            );
+          }
+        )
+
+        .getAllProducts();
+    }
+
+
+    /* =====================================================
+       SEARCH
+       ===================================================== */
+
+    function searchProducts() {
+
+      const input =
+        document.getElementById(
+          "searchInput"
+        );
+
+      const query =
+        String(
+          input.value || ""
+        )
+        .trim()
+        .toLowerCase();
+
+      if (!query) {
+
+        filteredProducts =
+          products.slice();
+
+      } else {
+
+        filteredProducts =
+          products.filter(
+            function(product) {
+
+              const searchable = [
+
+                product.productId,
+
+                product.productCode,
+
+                product.productName,
+
+                product.brand,
+
+                product.category,
+
+                product.material,
+
+                product.size,
+
+                product.rack
+
+              ]
+              .map(
+                function(value) {
+
+                  return String(
+                    value || ""
+                  ).toLowerCase();
+                }
+              )
+              .join(" ");
+
+              return searchable
+                .includes(query);
+            }
+          );
+      }
+
+      renderProducts();
+
+      updateSearchCount();
+    }
+
+
+    /* =====================================================
+       SEARCH COUNT
+       ===================================================== */
+
+    function updateSearchCount() {
+
+      const element =
+        document.getElementById(
+          "searchResult"
+        );
+
+      const total =
+        products.length;
+
+      const showing =
+        filteredProducts.length;
+
+      const input =
+        document.getElementById(
+          "searchInput"
+        );
+
+      const query =
+        String(
+          input.value || ""
+        ).trim();
+
+      if (!query) {
+
+        element.textContent =
+          total +
+          " product" +
+          (
+            total === 1
+              ? ""
+              : "s"
+          );
+
+      } else {
+
+        element.textContent =
+          "Showing " +
+          showing +
+          " of " +
+          total +
+          " products";
+      }
+    }
+
+
+    /* =====================================================
+       RENDER
+       ===================================================== */
+
+    function renderProducts() {
+
+      const grid =
+        document.getElementById(
+          "productsGrid"
+        );
+
+      grid.innerHTML = "";
+
+      if (
+        filteredProducts.length === 0
+      ) {
+
+        grid.innerHTML = `
+
+          <div class="empty">
+
+            No products found.
+
+          </div>
+
+        `;
+
+        return;
+      }
+
+      filteredProducts.forEach(
+        function(product) {
+
+          const originalIndex =
+            products.indexOf(
+              product
+            );
+
+          grid.appendChild(
+            createCard(
+              product,
+              originalIndex
+            )
+          );
+        }
+      );
+    }
+
+
+    /* =====================================================
+       CREATE CARD
+       ===================================================== */
+
+    function createCard(
+      product,
+      index
+    ) {
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+      card.className =
+        "product-card";
+
+      const stock =
+        Number(
+          product.currentStock
+        ) || 0;
+
+      let statusClass = "";
+
+      let statusText = "";
+
+      if (stock <= 0) {
+
+        statusClass =
+          "zero";
+
+        statusText =
+          "OUT OF STOCK";
+
+      }
+
+      else if (stock <= 5) {
+
+        statusClass =
+          "low";
+
+        statusText =
+          "LOW STOCK • " +
+          stock;
+
+      }
+
+      else {
+
+        statusClass =
+          "available";
+
+        statusText =
+          "AVAILABLE";
+      }
+
+      /* IMAGE */
+
+      let imageHtml = "";
+
+      if (
+        product.imageUrl &&
+        String(
+          product.imageUrl
+        ).trim()
+      ) {
+
+        imageHtml = `
+
+          <img
+            class="product-image"
+            src="${escapeAttribute(
+              product.imageUrl
+            )}"
+            alt="${escapeAttribute(
+              product.productName || ""
+            )}"
+            onerror="
+              this.style.display='none';
+              this.nextElementSibling.style.display='block';
+            ">
+
+          <div
+            class="no-image"
+            style="display:none;">
+
+            No Image
+
+          </div>
+
+        `;
+
+      } else {
+
+        imageHtml = `
+
+          <div class="no-image">
+
+            No Image
+
+          </div>
+
+        `;
+      }
+
+      /* PRICE */
+
+      let priceText = "—";
+
+      if (
+        product.sellingPrice !== "" &&
+        product.sellingPrice !== null &&
+        product.sellingPrice !== undefined
+      ) {
+
+        priceText =
+          "₹" +
+          formatNumber(
+            product.sellingPrice
+          );
+      }
+
+      card.innerHTML = `
+
+        <div class="product-top">
+
+          <div class="image-box">
+
+            ${imageHtml}
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-name">
+
+              ${escapeHtml(
+                product.productName ||
+                "Unnamed Product"
+              )}
+
+            </div>
+
+            <div class="product-code">
+
+              Product Code:
+              ${escapeHtml(
+                product.productCode ||
+                product.productId ||
+                "-"
+              )}
+
+            </div>
+
+            <div class="details">
+
+              ${
+                product.brand
+                  ? `
+
+                    <div class="detail-row">
+
+                      <div class="detail-label">
+                        Brand
+                      </div>
+
+                      <div class="detail-value">
+                        ${escapeHtml(
+                          product.brand
+                        )}
+                      </div>
+
+                    </div>
+
+                  `
+                  : ""
+              }
+
+              ${
+                product.category
+                  ? `
+
+                    <div class="detail-row">
+
+                      <div class="detail-label">
+                        Category
+                      </div>
+
+                      <div class="detail-value">
+                        ${escapeHtml(
+                          product.category
+                        )}
+                      </div>
+
+                    </div>
+
+                  `
+                  : ""
+              }
+
+              ${
+                product.material
+                  ? `
+
+                    <div class="detail-row">
+
+                      <div class="detail-label">
+                        Material
+                      </div>
+
+                      <div class="detail-value">
+                        ${escapeHtml(
+                          product.material
+                        )}
+                      </div>
+
+                    </div>
+
+                  `
+                  : ""
+              }
+
+              ${
+                product.size
+                  ? `
+
+                    <div class="detail-row">
+
+                      <div class="detail-label">
+                        Size
+                      </div>
+
+                      <div class="detail-value">
+                        ${escapeHtml(
+                          product.size
+                        )}
+                      </div>
+
+                    </div>
+
+                  `
+                  : ""
+              }
+
+            </div>
+
+            <div class="status-row">
+
+              <div
+                id="status-${index}"
+                class="stock-status ${statusClass}">
+
+                ${statusText}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="stats">
+
+          <div class="stat">
+
+            <div
+              id="price-${index}"
+              class="stat-value">
+
+              ${priceText}
+
+            </div>
+
+            <div class="stat-label">
+              Price
+            </div>
+
+          </div>
+
+          <div class="stat">
+
+            <div
+              id="stock-number-${index}"
+              class="
+                stat-value
+                stock-number
+                ${
+                  stock <= 0
+                    ? "zero"
+                    : stock <= 5
+                      ? "low"
+                      : ""
+                }
+              ">
+
+              ${stock}
+
+            </div>
+
+            <div class="stat-label">
+              Stock
+            </div>
+
+          </div>
+
+          <div class="stat">
+
+            <div
+              class="stat-value rack">
+
+              ${escapeHtml(
+                product.rack || "—"
+              )}
+
+            </div>
+
+            <div class="stat-label">
+              Rack
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="actions">
+
+          <button
+            class="action-button add-button"
+            onclick="openModal(${index}, 'IN')">
+
+            + ADD STOCK
+
+          </button>
+
+          <button
+            class="action-button remove-button"
+            onclick="openModal(${index}, 'OUT')">
+
+            − REMOVE STOCK
+
+          </button>
+
+          <button
+            class="action-button qr-button"
+            onclick="viewQR(${index})">
+
+            VIEW PRODUCT QR
+
+          </button>
+
+        </div>
+
+      `;
+
+      return card;
+    }
+
+
+    /* =====================================================
+       STOCK MODAL
+       ===================================================== */
+
+    function openModal(
+      index,
+      action
+    ) {
+
+      if (isUpdating) {
+        return;
+      }
+
+      const product =
+        products[index];
+
+      if (!product) {
+        return;
+      }
+
+      selectedProductIndex =
+        index;
+
+      selectedAction =
+        action;
+
+      document.getElementById(
+        "modalTitle"
+      ).textContent =
+        action === "IN"
+          ? "Add Stock"
+          : "Remove Stock";
+
+      document.getElementById(
+        "modalProduct"
+      ).textContent =
+        (
+          product.productName ||
+          "Product"
+        ) +
+        " • " +
+        (
+          product.productCode ||
+          product.productId ||
+          ""
+        );
+
+      document.getElementById(
+        "quantityInput"
+      ).value = "";
+
+      document.getElementById(
+        "modalMessage"
+      ).style.display =
+        "none";
+
+      document.getElementById(
+        "stockModal"
+      ).style.display =
+        "flex";
+
+      setTimeout(
+        function() {
+
+          document.getElementById(
+            "quantityInput"
+          ).focus();
+
+        },
+        50
+      );
+    }
+
+
+    function closeModal() {
+
+      if (isUpdating) {
+        return;
+      }
+
+      document.getElementById(
+        "stockModal"
+      ).style.display =
+        "none";
+
+      selectedProductIndex =
+        -1;
+
+      selectedAction =
+        "";
+    }
+
+
+    function closeModalFromBackground(
+      event
+    ) {
+
+      if (
+        event.target.id ===
+        "stockModal"
+      ) {
+
+        closeModal();
+      }
+    }
+
+
+    /* =====================================================
+       STOCK UPDATE
+       ===================================================== */
+
+    function confirmAction() {
+
+      if (isUpdating) {
+        return;
+      }
+
+      const index =
+        selectedProductIndex;
+
+      const action =
+        selectedAction;
+
+      const product =
+        products[index];
+
+      if (!product) {
+        return;
+      }
+
+      const quantity =
+        Number(
+          document.getElementById(
+            "quantityInput"
+          ).value
+        );
+
+      const message =
+        document.getElementById(
+          "modalMessage"
+        );
+
+      if (
+        !Number.isInteger(quantity) ||
+        quantity <= 0
+      ) {
+
+        message.textContent =
+          "Please enter a valid whole number.";
+
+        message.style.display =
+          "block";
+
+        return;
+      }
+
+      if (
+        action === "OUT" &&
+        quantity >
+          Number(
+            product.currentStock || 0
+          )
+      ) {
+
+        message.textContent =
+          "Not enough stock. Available: " +
+          Number(
+            product.currentStock || 0
+          );
+
+        message.style.display =
+          "block";
+
+        return;
+      }
+
+      isUpdating = true;
+
+      const confirmButton =
+        document.getElementById(
+          "confirmButton"
+        );
+
+      const cancelButton =
+        document.getElementById(
+          "cancelButton"
+        );
+
+      confirmButton.disabled =
+        true;
+
+      cancelButton.disabled =
+        true;
+
+      confirmButton.textContent =
+        "UPDATING...";
+
+      function success(result) {
+
+        isUpdating = false;
+
+        confirmButton.disabled =
+          false;
+
+        cancelButton.disabled =
+          false;
+
+        confirmButton.textContent =
+          "CONFIRM";
+
+        if (
+          !result ||
+          !result.success
+        ) {
+
+          message.textContent =
+            "Stock update failed.";
+
+          message.style.display =
+            "block";
+
+          return;
+        }
+
+        updateLocalStock(
+          index,
+          result.newStock
+        );
+
+        closeModal();
+      }
+
+
+      function failure(error) {
+
+        isUpdating = false;
+
+        confirmButton.disabled =
+          false;
+
+        cancelButton.disabled =
+          false;
+
+        confirmButton.textContent =
+          "CONFIRM";
+
+        message.textContent =
+          error &&
+          error.message
+            ? error.message
+            : "Stock update failed.";
+
+        message.style.display =
+          "block";
+      }
+
+
+      if (action === "IN") {
+
+        google.script.run
+
+          .withSuccessHandler(
+            success
+          )
+
+          .withFailureHandler(
+            failure
+          )
+
+          .addStock(
+            product.productId,
+            quantity
+          );
+
+      } else {
+
+        google.script.run
+
+          .withSuccessHandler(
+            success
+          )
+
+          .withFailureHandler(
+            failure
+          )
+
+          .removeStock(
+            product.productId,
+            quantity
+          );
+      }
+    }
+
+
+    /* =====================================================
+       LOCAL STOCK
+       ===================================================== */
+
+    function updateLocalStock(
+      index,
+      newStock
+    ) {
+
+      newStock =
+        Number(newStock) || 0;
+
+      if (!products[index]) {
+        return;
+      }
+
+      products[index].currentStock =
+        newStock;
+
+      const stockNumber =
+        document.getElementById(
+          "stock-number-" + index
+        );
+
+      if (stockNumber) {
+
+        stockNumber.textContent =
+          newStock;
+
+        stockNumber.className =
+          "stat-value stock-number";
+
+        if (newStock <= 0) {
+
+          stockNumber.classList.add(
+            "zero"
+          );
+
+        } else if (newStock <= 5) {
+
+          stockNumber.classList.add(
+            "low"
+          );
+        }
+      }
+
+      const status =
+        document.getElementById(
+          "status-" + index
+        );
+
+      if (!status) {
+        return;
+      }
+
+      if (newStock <= 0) {
+
+        status.className =
+          "stock-status zero";
+
+        status.textContent =
+          "OUT OF STOCK";
+
+      } else if (newStock <= 5) {
+
+        status.className =
+          "stock-status low";
+
+        status.textContent =
+          "LOW STOCK • " +
+          newStock;
+
+      } else {
+
+        status.className =
+          "stock-status available";
+
+        status.textContent =
+          "AVAILABLE";
+      }
+    }
+
+
+    /* =====================================================
+       QR
+       ===================================================== */
+
+    function viewQR(index) {
+
+      const product = products[index];
+
+      if (!product) {
+        alert("Product not found.");
+        return;
+      }
+
+      const modal =
+        document.getElementById("qrModal");
+
+      const image =
+        document.getElementById("qrImage");
+
+      const loading =
+        document.getElementById("qrLoading");
+
+      document.getElementById(
+        "qrProductName"
+      ).textContent =
+        product.productName ||
+        "Product QR";
+
+      document.getElementById(
+        "qrProductCode"
+      ).textContent =
+        "Product Code: " +
+        (
+          product.productCode ||
+          product.productId ||
+          "-"
+        );
+
+      image.style.display = "none";
+      image.src = "";
+
+      loading.style.display = "flex";
+
+      modal.style.display = "flex";
+
+      let qrContent = "";
+
+      if (
+        product.qrUrl &&
+        (
+          String(product.qrUrl)
+            .trim()
+            .startsWith("http://") ||
+
+          String(product.qrUrl)
+            .trim()
+            .startsWith("https://")
+        )
+      ) {
+
+        qrContent =
+          String(product.qrUrl).trim();
+      }
+
+      else if (
+        product.qrCode &&
+        (
+          String(product.qrCode)
+            .trim()
+            .startsWith("http://") ||
+
+          String(product.qrCode)
+            .trim()
+            .startsWith("https://")
+        )
+      ) {
+
+        qrContent =
+          String(product.qrCode).trim();
+      }
+
+      else {
+
+        const baseUrl =
+          window.location.href
+            .split("?")[0];
+
+        qrContent =
+          baseUrl +
+          "?id=" +
+          encodeURIComponent(
+            product.productId
+          );
+      }
+
+      const qrImageUrl =
+        "https://quickchart.io/qr" +
+        "?size=600" +
+        "&margin=2" +
+        "&text=" +
+        encodeURIComponent(
+          qrContent
+        );
+
+      const fallbackQrImageUrl =
+        "https://api.qrserver.com/v1/create-qr-code/" +
+        "?size=600x600" +
+        "&data=" +
+        encodeURIComponent(
+          qrContent
+        );
+
+      let usingFallback = false;
+
+      image.onload = function() {
+
+        loading.style.display =
+          "none";
+
+        image.style.display =
+          "block";
+      };
+
+      image.onerror = function() {
+
+        if (!usingFallback) {
+
+          usingFallback = true;
+
+          image.src =
+            fallbackQrImageUrl;
+
+          return;
+        }
+
+        loading.style.display =
+          "none";
+
+        image.style.display =
+          "none";
+
+        alert(
+          "QR image could not be loaded. Please check your internet connection."
+        );
+      };
+
+      image.src =
+        qrImageUrl;
+    }
+
+
+    /* =====================================================
+       CLOSE QR
+       ===================================================== */
+
+    function closeQR() {
+
+      document.getElementById(
+        "qrModal"
+      ).style.display =
+        "none";
+
+      document.getElementById(
+        "qrImage"
+      ).src = "";
+
+      document.getElementById(
+        "qrLoading"
+      ).style.display =
+        "none";
+    }
+
+
+    function closeQRFromBackground(
+      event
+    ) {
+
+      if (
+        event.target.id ===
+        "qrModal"
+      ) {
+
+        closeQR();
+      }
+    }
+
+
+    /* =====================================================
+       ESCAPE KEY
+       ===================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key !== "Escape"
+        ) {
+          return;
+        }
+
+        const qrModal =
+          document.getElementById(
+            "qrModal"
+          );
+
+        if (
+          qrModal.style.display ===
+          "flex"
+        ) {
+
+          closeQR();
+
+          return;
+        }
+
+        const stockModal =
+          document.getElementById(
+            "stockModal"
+          );
+
+        if (
+          stockModal.style.display ===
+          "flex"
+        ) {
+
+          closeModal();
+        }
+      }
+    );
+
+
+    /* =====================================================
+       ENTER IN SEARCH
+       ===================================================== */
+
+    document.getElementById(
+      "searchInput"
+    ).addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          this.value = "";
+
+          searchProducts();
+
+          this.blur();
+        }
+      }
+    );
+
+
+    /* =====================================================
+       FORMAT NUMBER
+       ===================================================== */
+
+    function formatNumber(
+      value
+    ) {
+
+      const number =
+        Number(value);
+
+      if (
+        !Number.isFinite(number)
+      ) {
+
+        return String(
+          value || ""
+        );
+      }
+
+      return number.toLocaleString(
+        "en-IN"
+      );
+    }
+
+
+    /* =====================================================
+       ESCAPE HTML
+       ===================================================== */
+
+    function escapeHtml(
+      value
+    ) {
+
+      return String(
+        value === null ||
+        value === undefined
+          ? ""
+          : value
+      )
+      .replace(
+        /&/g,
+        "&amp;"
+      )
+      .replace(
+        /</g,
+        "&lt;"
+      )
+      .replace(
+        />/g,
+        "&gt;"
+      )
+      .replace(
+        /"/g,
+        "&quot;"
+      )
+      .replace(
+        /'/g,
+        "&#039;"
+      );
+    }
+
+
+    function escapeAttribute(
+      value
+    ) {
+
+      return escapeHtml(
+        value
+      );
+    }
+
+
+    /* =====================================================
+       ERROR
+       ===================================================== */
+
+    function showError(
+      message
+    ) {
+
+      const element =
+        document.getElementById(
+          "errorMessage"
+        );
+
+      element.textContent =
+        message ||
+        "Something went wrong.";
+
+      element.style.display =
+        "block";
+    }
+
+
+    /* =====================================================
+       START
+       ===================================================== */
+
+    loadProducts();
+
+  </script>
+
+</body>
+
+</html>

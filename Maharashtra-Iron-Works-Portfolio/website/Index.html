@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <base target="_top">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 15px;
+      background: #f3f4f6;
+      font-family: Arial, sans-serif;
+      color: #111;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .header h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .header p {
+      margin: 7px 0 0;
+      font-size: 13px;
+      opacity: .7;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 260px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #f1f2f3;
+      margin-bottom: 18px;
+    }
+
+    .no-image {
+      width: 100%;
+      height: 150px;
+      background: #f1f2f3;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      margin-bottom: 18px;
+    }
+
+    .product-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .product-code {
+      color: #777;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+    }
+
+    .info-label {
+      color: #777;
+    }
+
+    .info-value {
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .stock {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f1f1f1;
+      border-radius: 14px;
+      text-align: center;
+      font-size: 27px;
+      font-weight: bold;
+    }
+
+    .stock.zero {
+      background: #fff0f0;
+      color: #e32929;
+    }
+
+    .stock.available {
+      color: #07852e;
+    }
+
+    .buttons {
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    button {
+      border: none;
+      border-radius: 11px;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .sold {
+      background: #111;
+      color: white;
+    }
+
+    .add {
+      background: #e5e5e5;
+      color: #111;
+    }
+
+    button:disabled {
+      opacity: .5;
+    }
+
+    .error {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      color: #d22;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 400px;
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .modal-box h2 {
+      margin-top: 0;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .modal-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .cancel {
+      background: #eee;
+    }
+
+    .confirm {
+      background: #111;
+      color: white;
+    }
+
+    @media (max-width: 500px) {
+
+      .buttons {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+  <div class="header">
+
+    <h2>
+      Product & Inventory System
+    </h2>
+
+    <p>
+      Maharashtra Iron Works
+    </p>
+
+  </div>
+
+
+  <? if (!product) { ?>
+
+    <div class="error">
+
+      <h2>
+        Product Not Found
+      </h2>
+
+      <p>
+        Please check the QR code.
+      </p>
+
+    </div>
+
+
+  <? } else { ?>
+
+
+    <div class="card">
+
+
+      <? if (product.imageUrl) { ?>
+
+        <img
+          class="product-image"
+          src="<?= product.imageUrl ?>"
+          onerror="this.style.display='none';document.getElementById('noImage').style.display='flex';"
+        >
+
+        <div
+          id="noImage"
+          class="no-image"
+          style="display:none;"
+        >
+          Image unavailable
+        </div>
+
+      <? } else { ?>
+
+        <div class="no-image">
+          No Image
+        </div>
+
+      <? } ?>
+
+
+      <div class="product-name">
+        <?= product.productName || "-" ?>
+      </div>
+
+
+      <div class="product-code">
+        Product Code:
+        <?= product.productCode || "-" ?>
+      </div>
+
+
+      <div class="price">
+        ₹<?= product.sellingPrice || "-" ?>
+      </div>
+
+
+      <div class="info-row">
+
+        <span class="info-label">
+          Brand
+        </span>
+
+        <span class="info-value">
+          <?= product.brand || "-" ?>
+        </span>
+
+      </div>
+
+
+      <div class="info-row">
+
+        <span class="info-label">
+          Category
+        </span>
+
+        <span class="info-value">
+          <?= product.category || "-" ?>
+        </span>
+
+      </div>
+
+
+      <div class="info-row">
+
+        <span class="info-label">
+          Material
+        </span>
+
+        <span class="info-value">
+          <?= product.material || "-" ?>
+        </span>
+
+      </div>
+
+
+      <div class="info-row">
+
+        <span class="info-label">
+          Size
+        </span>
+
+        <span class="info-value">
+          <?= product.size || "-" ?>
+        </span>
+
+      </div>
+
+
+      <div class="info-row">
+
+        <span class="info-label">
+          Rack
+        </span>
+
+        <span class="info-value">
+          <?= product.rack || "-" ?>
+        </span>
+
+      </div>
+
+
+      <div
+        id="stock"
+        class="stock
+        <?= Number(product.currentStock) <= 0
+            ? 'zero'
+            : 'available' ?>"
+      >
+
+        <? if (Number(product.currentStock) <= 0) { ?>
+
+          OUT OF STOCK
+
+        <? } else { ?>
+
+          Stock:
+          <?= product.currentStock ?>
+
+        <? } ?>
+
+      </div>
+
+
+      <div class="buttons">
+
+        <button
+          class="sold"
+          onclick="openSold()"
+        >
+          SOLD
+        </button>
+
+
+        <button
+          class="add"
+          onclick="openAdd()"
+        >
+          ADD STOCK
+        </button>
+
+      </div>
+
+
+    </div>
+
+
+  <? } ?>
+
+
+</div>
+
+
+<!-- SOLD MODAL -->
+
+<div
+  id="soldModal"
+  class="modal"
+>
+
+  <div class="modal-box">
+
+    <h2>
+      Sell Product
+    </h2>
+
+
+    <input
+      id="soldQuantity"
+      type="number"
+      min="1"
+      step="1"
+      placeholder="Quantity sold"
+    >
+
+
+    <input
+      id="staffName"
+      type="text"
+      placeholder="Staff name"
+    >
+
+
+    <div class="modal-buttons">
+
+      <button
+        class="cancel"
+        onclick="closeSold()"
+      >
+        CANCEL
+      </button>
+
+
+      <button
+        id="soldConfirm"
+        class="confirm"
+        onclick="confirmSold()"
+      >
+        CONFIRM
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ADD STOCK MODAL -->
+
+<div
+  id="addModal"
+  class="modal"
+>
+
+  <div class="modal-box">
+
+    <h2>
+      Add Stock
+    </h2>
+
+
+    <input
+      id="addQuantity"
+      type="number"
+      min="1"
+      step="1"
+      placeholder="Quantity added"
+    >
+
+
+    <div class="modal-buttons">
+
+      <button
+        class="cancel"
+        onclick="closeAdd()"
+      >
+        CANCEL
+      </button>
+
+
+      <button
+        id="addConfirm"
+        class="confirm"
+        onclick="confirmAdd()"
+      >
+        CONFIRM
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+
+/* =================================================
+   SOLD
+================================================= */
+
+function openSold() {
+
+  document.getElementById("soldModal").style.display = "flex";
+
+  document.getElementById("soldQuantity").value = "";
+
+  document.getElementById("staffName").value = "";
+
+}
+
+
+function closeSold() {
+
+  document.getElementById("soldModal").style.display = "none";
+
+}
+
+
+function confirmSold() {
+
+  const quantity =
+    Number(
+      document.getElementById("soldQuantity").value
+    );
+
+  const staff =
+    document.getElementById("staffName").value.trim();
+
+
+  if (
+    !Number.isInteger(quantity) ||
+    quantity <= 0
+  ) {
+
+    alert("Please enter a valid quantity.");
+
+    return;
+
+  }
+
+
+  if (!staff) {
+
+    alert("Please enter staff name.");
+
+    return;
+
+  }
+
+
+  const button =
+    document.getElementById("soldConfirm");
+
+
+  button.disabled = true;
+
+  button.textContent = "UPDATING...";
+
+
+  google.script.run
+
+    .withSuccessHandler(function(result) {
+
+      updateStock(result.newStock);
+
+      closeSold();
+
+      button.disabled = false;
+
+      button.textContent = "CONFIRM";
+
+    })
+
+    .withFailureHandler(function(error) {
+
+      alert(error.message);
+
+      button.disabled = false;
+
+      button.textContent = "CONFIRM";
+
+    })
+
+    .sellProduct(
+      "<?= product ? product.productId : '' ?>",
+      quantity,
+      staff
+    );
+
+}
+
+
+/* =================================================
+   ADD STOCK
+================================================= */
+
+function openAdd() {
+
+  document.getElementById("addModal").style.display = "flex";
+
+  document.getElementById("addQuantity").value = "";
+
+}
+
+
+function closeAdd() {
+
+  document.getElementById("addModal").style.display = "none";
+
+}
+
+
+function confirmAdd() {
+
+  const quantity =
+    Number(
+      document.getElementById("addQuantity").value
+    );
+
+
+  if (
+    !Number.isInteger(quantity) ||
+    quantity <= 0
+  ) {
+
+    alert("Please enter a valid quantity.");
+
+    return;
+
+  }
+
+
+  const button =
+    document.getElementById("addConfirm");
+
+
+  button.disabled = true;
+
+  button.textContent = "UPDATING...";
+
+
+  google.script.run
+
+    .withSuccessHandler(function(result) {
+
+      updateStock(result.newStock);
+
+      closeAdd();
+
+      button.disabled = false;
+
+      button.textContent = "CONFIRM";
+
+    })
+
+    .withFailureHandler(function(error) {
+
+      alert(error.message);
+
+      button.disabled = false;
+
+      button.textContent = "CONFIRM";
+
+    })
+
+    .workerAddStock(
+      "<?= product ? product.productId : '' ?>",
+      quantity
+    );
+
+}
+
+
+/* =================================================
+   UPDATE STOCK ON SCREEN
+================================================= */
+
+function updateStock(newStock) {
+
+  const stock =
+    document.getElementById("stock");
+
+
+  if (!stock) {
+    return;
+  }
+
+
+  if (Number(newStock) <= 0) {
+
+    stock.className = "stock zero";
+
+    stock.textContent = "OUT OF STOCK";
+
+  }
+
+  else {
+
+    stock.className = "stock available";
+
+    stock.textContent = "Stock: " + newStock;
+
+  }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

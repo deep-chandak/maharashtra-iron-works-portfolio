@@ -1,0 +1,301 @@
+product_id,product_code,product_name,brand,category,material,size,rack,selling_price,current_stock,cost_price,supplier,lead_time_days,reorder_level,opening_stock_1_may
+P001,MIW-001,Angle Grinder 4 inch,ProLine,Power Tools,Steel/Plastic,4 inch,R01,1850,17,1614.02,Supplier 5,9,2,17
+P002,MIW-002,Angle Grinder 5 inch,SAIL,Power Tools,Steel/Plastic,5 inch,R01,2450,24,2081.18,Supplier 6,8,4,24
+P003,MIW-003,Angle Grinder 7 inch,IronMax,Power Tools,Steel/Plastic,7 inch,R01,3650,31,3279.1,Supplier 4,8,4,31
+P004,MIW-004,Cutting Machine 14 inch,IronMax,Power Tools,Steel,14 inch,R01,6200,38,5116.05,Supplier 4,5,2,38
+P005,MIW-005,Bench Grinder 6 inch,Shyam Steel,Power Tools,Steel,6 inch,R01,4800,37,4036.5,Supplier 2,5,2,37
+P006,MIW-006,Bench Grinder 8 inch,Maharashtra Steel,Power Tools,Steel,8 inch,R01,6500,11,5597.47,Supplier 2,5,3,11
+P007,MIW-007,Electric Drill 10mm,Jindal,Power Tools,Steel/Plastic,10 mm,R01,1850,18,1593.95,Supplier 6,7,5,18
+P008,MIW-008,Electric Drill 13mm,JSW,Power Tools,Steel/Plastic,13 mm,R01,2650,25,2247.45,Supplier 5,10,3,25
+P009,MIW-009,Impact Drill 13mm,Tata,Power Tools,Steel/Plastic,13 mm,R01,3250,32,2796.97,Supplier 4,9,3,32
+P010,MIW-010,Rotary Hammer 26mm,Maharashtra Steel,Power Tools,Steel/Plastic,26 mm,R01,5850,39,5029.13,Supplier 2,9,4,39
+P011,MIW-011,Rotary Hammer 32mm,JSW,Power Tools,Steel/Plastic,32 mm,R02,8200,46,6881.49,Supplier 5,6,5,46
+P012,MIW-012,Demolition Hammer 17mm,SAIL,Power Tools,Steel/Plastic,17 mm,R02,7800,12,6579.83,Supplier 6,7,2,12
+P013,MIW-013,Demolition Hammer 30mm,PrimeBuild,Power Tools,Steel/Plastic,30 mm,R02,11200,19,9588.42,Supplier 4,10,4,19
+P014,MIW-014,Cordless Drill 12V,Durafit,Power Tools,Steel/Plastic,12 V,R02,3950,26,3383.48,Supplier 3,9,5,26
+P015,MIW-015,Cordless Drill 20V,Shakti,Power Tools,Steel/Plastic,20 V,R02,6250,33,5319.93,Supplier 1,9,5,34
+P016,MIW-016,Cordless Impact Driver 20V,SteelCraft,Power Tools,Steel/Plastic,20 V,R02,6850,40,5948.35,Supplier 3,8,3,40
+P017,MIW-017,Heat Gun 2000W,Shyam Steel,Power Tools,Plastic/Steel,2000 W,R02,1850,47,1597.74,Supplier 2,5,5,47
+P018,MIW-018,Blower 600W,Tata,Power Tools,Plastic,600 W,R02,1650,13,1390.71,Supplier 4,9,5,13
+P019,MIW-019,Jigsaw 650W,SAIL,Power Tools,Steel/Plastic,650 W,R02,3450,20,2958.62,Supplier 6,7,2,20
+P020,MIW-020,Circular Saw 7 inch,APL Apollo,Power Tools,Steel/Plastic,7 inch,R02,5850,27,5182.65,Supplier 1,6,5,27
+P021,MIW-021,Marble Cutter 4 inch,ProLine,Power Tools,Steel/Plastic,4 inch,R03,2950,34,2552.61,Supplier 5,9,5,31
+P022,MIW-022,Wood Router 12mm,Kamdhenu,Power Tools,Steel/Plastic,12 mm,R03,6250,41,5253.43,Supplier 1,7,5,41
+P023,MIW-023,Polisher 7 inch,Shyam Steel,Power Tools,Steel/Plastic,7 inch,R03,4250,48,3654.24,Supplier 2,6,5,48
+P024,MIW-024,Die Grinder 6mm,Kamdhenu,Power Tools,Steel/Plastic,6 mm,R03,2850,14,2445.22,Supplier 1,10,3,14
+P025,MIW-025,Straight Grinder 25mm,APL Apollo,Power Tools,Steel/Plastic,25 mm,R03,4950,21,4162.27,Supplier 1,7,3,21
+P026,MIW-026,Welding Machine 200A,Durafit,Welding,Copper/Steel,200 A,R03,4850,28,4025.77,Supplier 3,11,3,28
+P027,MIW-027,Welding Machine 250A,Jindal,Welding,Copper/Steel,250 A,R03,6250,35,5537.81,Supplier 6,8,1,35
+P028,MIW-028,Welding Machine 300A,Tata,Welding,Copper/Steel,300 A,R03,7850,42,6594.17,Supplier 4,8,1,42
+P029,MIW-029,Inverter Welding Machine 200A,JSW,Welding,Copper/Steel,200 A,R03,5250,49,4716.56,Supplier 5,11,1,49
+P030,MIW-030,Inverter Welding Machine 250A,Shakti,Welding,Copper/Steel,250 A,R03,6950,15,6016.02,Supplier 1,12,2,15
+P031,MIW-031,MIG Welding Machine 250A,SAIL,Welding,Steel/Copper,250 A,R04,18500,22,16593.21,Supplier 6,8,1,22
+P032,MIW-032,MIG Welding Machine 300A,APL Apollo,Welding,Steel/Copper,300 A,R04,24500,29,20578.83,Supplier 1,8,1,29
+P033,MIW-033,TIG Welding Machine 200A,PrimeBuild,Welding,Steel/Copper,200 A,R04,22500,36,19148.65,Supplier 4,9,3,36
+P034,MIW-034,Welding Cable 16 sq mm,JSW,Welding,Copper,16 sq mm,R04,145,43,122.45,Supplier 5,10,2,43
+P035,MIW-035,Welding Cable 25 sq mm,MetroFab,Welding,Copper,25 sq mm,R04,215,50,191.38,Supplier 3,9,3,50
+P036,MIW-036,Welding Cable 35 sq mm,ProLine,Welding,Copper,35 sq mm,R04,295,14,252.02,Supplier 5,10,1,14
+P037,MIW-037,Welding Electrode 2.5mm,Maharashtra Steel,Welding Consumables,Mild Steel,2.5 mm,R04,180,22,151.97,Supplier 2,6,8,22
+P038,MIW-038,Welding Electrode 3.15mm,APL Apollo,Welding Consumables,Mild Steel,3.15 mm,R04,165,27,139.09,Supplier 1,4,20,27
+P039,MIW-039,Welding Electrode 4mm,SteelCraft,Welding Consumables,Mild Steel,4 mm,R04,155,37,127.55,Supplier 3,7,20,38
+P040,MIW-040,Welding Electrode 5mm,Maharashtra Steel,Welding Consumables,Mild Steel,5 mm,R04,175,23,142.71,Supplier 2,6,8,34
+P041,MIW-041,Stainless Welding Electrode 2.5mm,Jindal,Welding Consumables,Stainless Steel,2.5 mm,R05,420,10,348.22,Supplier 6,7,11,10
+P042,MIW-042,Stainless Welding Electrode 3.15mm,ProLine,Welding Consumables,Stainless Steel,3.15 mm,R05,450,17,380.98,Supplier 5,4,14,17
+P043,MIW-043,MIG Wire 0.8mm,Tata,Welding Consumables,Mild Steel,0.8 mm,R05,520,22,442.47,Supplier 4,7,16,22
+P044,MIW-044,MIG Wire 1.0mm,Maharashtra Steel,Welding Consumables,Mild Steel,1.0 mm,R05,495,31,398.12,Supplier 2,7,18,31
+P045,MIW-045,MIG Wire 1.2mm,Shyam Steel,Welding Consumables,Mild Steel,1.2 mm,R05,485,38,398.25,Supplier 2,7,8,35
+P046,MIW-046,TIG Filler Rod 2mm,JSW,Welding Consumables,Stainless Steel,2 mm,R05,650,67,532.09,Supplier 5,7,9,67
+P047,MIW-047,TIG Filler Rod 2.4mm,JSW,Welding Consumables,Stainless Steel,2.4 mm,R05,720,11,568.94,Supplier 5,4,8,11
+P048,MIW-048,Cutting Disc 4 inch,Jindal,Abrasives,Aluminium Oxide,4 inch,R05,18,18,14.57,Supplier 6,7,15,19
+P049,MIW-049,Cutting Disc 5 inch,Shakti,Abrasives,Aluminium Oxide,5 inch,R05,28,25,20.95,Supplier 1,4,15,25
+P050,MIW-050,Cutting Disc 7 inch,ProLine,Abrasives,Aluminium Oxide,7 inch,R05,55,32,40.6,Supplier 5,7,14,33
+P051,MIW-051,Cutting Disc 14 inch,APL Apollo,Abrasives,Aluminium Oxide,14 inch,R06,125,39,95.53,Supplier 1,6,10,39
+P052,MIW-052,Grinding Disc 4 inch,Jindal,Abrasives,Aluminium Oxide,4 inch,R06,35,46,27.24,Supplier 6,2,17,46
+P053,MIW-053,Grinding Disc 5 inch,Shakti,Abrasives,Aluminium Oxide,5 inch,R06,48,12,38.71,Supplier 1,2,19,12
+P054,MIW-054,Grinding Disc 7 inch,SteelCraft,Abrasives,Aluminium Oxide,7 inch,R06,85,19,65.9,Supplier 3,5,17,19
+P055,MIW-055,Flap Disc 4 inch,JSW,Abrasives,Zirconia,4 inch,R06,65,26,52.14,Supplier 5,3,20,28
+P056,MIW-056,Flap Disc 5 inch,BuildPro,Abrasives,Zirconia,5 inch,R06,95,33,75.44,Supplier 2,6,18,33
+P057,MIW-057,Flap Disc 7 inch,Jindal,Abrasives,Zirconia,7 inch,R06,145,40,115.88,Supplier 6,6,9,40
+P058,MIW-058,Wire Cup Brush 4 inch,IronMax,Abrasives,Steel Wire,4 inch,R06,85,47,67.01,Supplier 4,5,18,47
+P059,MIW-059,Wire Cup Brush 5 inch,IronMax,Abrasives,Steel Wire,5 inch,R06,125,13,96.25,Supplier 4,6,16,13
+P060,MIW-060,Wire Wheel Brush 3 inch,ProLine,Abrasives,Steel Wire,3 inch,R06,65,20,52.28,Supplier 5,5,15,20
+P061,MIW-061,Diamond Cutting Disc 4 inch,APL Apollo,Abrasives,Diamond,4 inch,R07,145,27,117.84,Supplier 1,5,10,27
+P062,MIW-062,Diamond Cutting Disc 7 inch,ProLine,Abrasives,Diamond,7 inch,R07,285,34,231.72,Supplier 5,3,12,34
+P063,MIW-063,Diamond Cutting Disc 14 inch,Kamdhenu,Abrasives,Diamond,14 inch,R07,650,41,528.05,Supplier 1,5,12,41
+P064,MIW-064,Drill Bit 3mm HSS,Jindal,Cutting Tools,HSS,3 mm,R07,25,48,20.37,Supplier 6,2,6,48
+P065,MIW-065,Drill Bit 4mm HSS,Kamdhenu,Cutting Tools,HSS,4 mm,R07,28,14,22.53,Supplier 1,5,8,14
+P066,MIW-066,Drill Bit 5mm HSS,JSW,Cutting Tools,HSS,5 mm,R07,32,21,24.45,Supplier 5,6,6,21
+P067,MIW-067,Drill Bit 6mm HSS,Durafit,Cutting Tools,HSS,6 mm,R07,38,28,30.35,Supplier 3,6,10,29
+P068,MIW-068,Drill Bit 8mm HSS,Jindal,Cutting Tools,HSS,8 mm,R07,55,35,43.05,Supplier 6,2,14,35
+P069,MIW-069,Drill Bit 10mm HSS,JSW,Cutting Tools,HSS,10 mm,R07,75,42,60.8,Supplier 5,6,13,42
+P070,MIW-070,Drill Bit 12mm HSS,ProLine,Cutting Tools,HSS,12 mm,R07,105,49,82.35,Supplier 5,6,7,49
+P071,MIW-071,Drill Bit 16mm HSS,Maharashtra Steel,Cutting Tools,HSS,16 mm,R08,165,15,135.49,Supplier 2,2,11,15
+P072,MIW-072,Drill Bit 20mm HSS,ProLine,Cutting Tools,HSS,20 mm,R08,245,22,196.15,Supplier 5,2,14,22
+P073,MIW-073,Masonry Drill Bit 5mm,IronMax,Cutting Tools,Chrome Vanadium,5 mm,R08,35,29,26.17,Supplier 4,5,15,31
+P074,MIW-074,Masonry Drill Bit 6mm,Kamdhenu,Cutting Tools,Chrome Vanadium,6 mm,R08,42,36,33.53,Supplier 1,4,8,36
+P075,MIW-075,Masonry Drill Bit 8mm,SAIL,Cutting Tools,Chrome Vanadium,8 mm,R08,55,43,42.19,Supplier 6,4,8,45
+P076,MIW-076,Masonry Drill Bit 10mm,SAIL,Cutting Tools,Chrome Vanadium,10 mm,R08,72,50,56.09,Supplier 6,2,5,51
+P077,MIW-077,Masonry Drill Bit 12mm,SAIL,Cutting Tools,Chrome Vanadium,12 mm,R08,95,16,75.07,Supplier 6,3,13,16
+P078,MIW-078,Masonry Drill Bit 16mm,Durafit,Cutting Tools,Chrome Vanadium,16 mm,R08,145,23,115.96,Supplier 3,5,8,24
+P079,MIW-079,HSS Step Drill 4-12mm,JSW,Cutting Tools,HSS,4-12 mm,R08,285,30,217.79,Supplier 5,5,8,30
+P080,MIW-080,HSS Step Drill 4-20mm,Durafit,Cutting Tools,HSS,4-20 mm,R08,425,37,336.05,Supplier 3,3,9,37
+P081,MIW-081,Hole Saw 32mm,APL Apollo,Cutting Tools,Bi-Metal,32 mm,R09,165,44,125.4,Supplier 1,4,6,45
+P082,MIW-082,Hole Saw 50mm,Shyam Steel,Cutting Tools,Bi-Metal,50 mm,R09,245,10,196.25,Supplier 2,4,6,10
+P083,MIW-083,Hole Saw 75mm,PrimeBuild,Cutting Tools,Bi-Metal,75 mm,R09,365,17,287.01,Supplier 4,4,11,17
+P084,MIW-084,TCT Hole Saw 25mm,JSW,Cutting Tools,TCT,25 mm,R09,185,24,144.08,Supplier 5,3,9,24
+P085,MIW-085,TCT Hole Saw 50mm,SAIL,Cutting Tools,TCT,50 mm,R09,325,31,253.67,Supplier 6,3,8,31
+P086,MIW-086,TCT Hole Saw 75mm,Shakti,Cutting Tools,TCT,75 mm,R09,495,38,401.46,Supplier 1,5,13,39
+P087,MIW-087,Hex Key Set 1.5-10mm,APL Apollo,Hand Tools,Chrome Vanadium,Set,R09,285,45,226.18,Supplier 1,5,7,46
+P088,MIW-088,Hex Key Set 2-12mm,Tata,Hand Tools,Chrome Vanadium,Set,R09,425,11,333.56,Supplier 4,5,9,11
+P089,MIW-089,Combination Spanner Set 8-19mm,MetroFab,Hand Tools,Chrome Vanadium,Set,R09,650,18,518.18,Supplier 3,3,8,17
+P090,MIW-090,Combination Spanner Set 8-24mm,Tata,Hand Tools,Chrome Vanadium,Set,R09,950,25,730.59,Supplier 4,3,10,25
+P091,MIW-091,Combination Spanner 10mm,Durafit,Hand Tools,Chrome Vanadium,10 mm,R10,85,32,65.5,Supplier 3,3,6,31
+P092,MIW-092,Combination Spanner 12mm,JSW,Hand Tools,Chrome Vanadium,12 mm,R10,95,39,77.79,Supplier 5,6,15,39
+P093,MIW-093,Combination Spanner 14mm,SteelCraft,Hand Tools,Chrome Vanadium,14 mm,R10,115,46,93.81,Supplier 3,7,8,46
+P094,MIW-094,Combination Spanner 17mm,JSW,Hand Tools,Chrome Vanadium,17 mm,R10,135,12,108.73,Supplier 5,6,7,13
+P095,MIW-095,Combination Spanner 19mm,ProLine,Hand Tools,Chrome Vanadium,19 mm,R10,155,19,120.76,Supplier 5,4,12,19
+P096,MIW-096,Combination Spanner 24mm,SAIL,Hand Tools,Chrome Vanadium,24 mm,R10,225,26,167.79,Supplier 6,7,10,29
+P097,MIW-097,Ring Spanner 12mm,Shakti,Hand Tools,Chrome Vanadium,12 mm,R10,105,33,82.77,Supplier 1,5,13,34
+P098,MIW-098,Ring Spanner 17mm,APL Apollo,Hand Tools,Chrome Vanadium,17 mm,R10,145,40,112.62,Supplier 1,4,15,40
+P099,MIW-099,Ring Spanner 22mm,BuildPro,Hand Tools,Chrome Vanadium,22 mm,R10,185,47,148.22,Supplier 2,5,12,47
+P100,MIW-100,Open End Spanner 12mm,ProLine,Hand Tools,Chrome Vanadium,12 mm,R10,75,13,60.07,Supplier 5,7,10,13
+P101,MIW-101,Open End Spanner 17mm,Maharashtra Steel,Hand Tools,Chrome Vanadium,17 mm,R11,105,20,85.98,Supplier 2,4,8,20
+P102,MIW-102,Adjustable Wrench 8 inch,SAIL,Hand Tools,Chrome Vanadium,8 inch,R11,285,27,222.8,Supplier 6,2,11,27
+P103,MIW-103,Adjustable Wrench 10 inch,Shakti,Hand Tools,Chrome Vanadium,10 inch,R11,365,34,278.96,Supplier 1,3,15,33
+P104,MIW-104,Adjustable Wrench 12 inch,ProLine,Hand Tools,Chrome Vanadium,12 inch,R11,485,41,382.1,Supplier 5,7,11,39
+P105,MIW-105,Pipe Wrench 10 inch,Durafit,Hand Tools,Ductile Iron,10 inch,R11,395,48,298.81,Supplier 3,4,11,48
+P106,MIW-106,Pipe Wrench 14 inch,SteelCraft,Hand Tools,Ductile Iron,14 inch,R11,525,14,408.26,Supplier 3,3,6,14
+P107,MIW-107,Pipe Wrench 18 inch,Jindal,Hand Tools,Ductile Iron,18 inch,R11,725,21,566.89,Supplier 6,7,9,20
+P108,MIW-108,Pipe Wrench 24 inch,IronMax,Hand Tools,Ductile Iron,24 inch,R11,1050,28,810.49,Supplier 4,4,12,28
+P109,MIW-109,Combination Pliers 8 inch,Shakti,Hand Tools,Chrome Vanadium,8 inch,R11,185,35,142.9,Supplier 1,3,14,35
+P110,MIW-110,Long Nose Pliers 6 inch,SAIL,Hand Tools,Chrome Vanadium,6 inch,R11,145,42,110.31,Supplier 6,2,15,42
+P111,MIW-111,Side Cutting Pliers 7 inch,Shyam Steel,Hand Tools,Chrome Vanadium,7 inch,R12,165,49,131.38,Supplier 2,7,12,49
+P112,MIW-112,Water Pump Pliers 10 inch,Durafit,Hand Tools,Chrome Vanadium,10 inch,R12,285,15,235.27,Supplier 3,7,15,15
+P113,MIW-113,Locking Pliers 10 inch,SAIL,Hand Tools,Chrome Vanadium,10 inch,R12,325,22,253.23,Supplier 6,4,5,23
+P114,MIW-114,Circlip Pliers Set,SAIL,Hand Tools,Chrome Vanadium,Set,R12,425,29,336.86,Supplier 6,4,11,29
+P115,MIW-115,Claw Hammer 500g,MetroFab,Hand Tools,Steel/Wood,500 g,R12,245,36,191.53,Supplier 3,3,7,36
+P116,MIW-116,Claw Hammer 1kg,IronMax,Hand Tools,Steel/Fibre,1 kg,R12,425,43,319.57,Supplier 4,7,8,43
+P117,MIW-117,Ball Peen Hammer 500g,ProLine,Hand Tools,Steel,500 g,R12,265,50,212.52,Supplier 5,7,15,50
+P118,MIW-118,Ball Peen Hammer 1kg,Shakti,Hand Tools,Steel,1 kg,R12,425,16,326.18,Supplier 1,2,12,16
+P119,MIW-119,Sledge Hammer 2kg,JSW,Hand Tools,Steel/Fibre,2 kg,R12,650,23,496.8,Supplier 5,3,9,24
+P120,MIW-120,Sledge Hammer 5kg,Durafit,Hand Tools,Steel/Wood,5 kg,R12,1250,30,966.13,Supplier 3,7,15,30
+P121,MIW-121,Rubber Mallet 500g,Kamdhenu,Hand Tools,Rubber/Steel,500 g,R13,245,37,186.52,Supplier 1,3,9,37
+P122,MIW-122,Cold Chisel 6 inch,ProLine,Hand Tools,Chrome Vanadium,6 inch,R13,95,44,75.02,Supplier 5,4,15,44
+P123,MIW-123,Cold Chisel 8 inch,Tata,Hand Tools,Chrome Vanadium,8 inch,R13,125,10,99.24,Supplier 4,6,8,12
+P124,MIW-124,Cold Chisel 10 inch,ProLine,Hand Tools,Chrome Vanadium,10 inch,R13,165,17,125.84,Supplier 5,3,8,41
+P125,MIW-125,Centre Punch 5 inch,Tata,Hand Tools,Chrome Vanadium,5 inch,R13,95,24,72.99,Supplier 4,7,12,24
+P126,MIW-126,Punch Set 6 Piece,Durafit,Hand Tools,Chrome Vanadium,Set,R13,285,31,215.63,Supplier 3,5,15,31
+P127,MIW-127,Screwdriver Flat 6 inch,Kamdhenu,Hand Tools,CRV,6 inch,R13,85,38,66.08,Supplier 1,3,5,38
+P128,MIW-128,Screwdriver Phillips 6 inch,Durafit,Hand Tools,CRV,6 inch,R13,85,45,63.97,Supplier 3,2,13,45
+P129,MIW-129,Screwdriver Flat 8 inch,Shakti,Hand Tools,CRV,8 inch,R13,105,11,82.58,Supplier 1,3,9,10
+P130,MIW-130,Screwdriver Phillips 8 inch,SteelCraft,Hand Tools,CRV,8 inch,R13,105,18,84.12,Supplier 3,5,14,18
+P131,MIW-131,Screwdriver Set 6 Piece,JSW,Hand Tools,CRV,Set,R14,285,25,233.82,Supplier 5,7,13,25
+P132,MIW-132,Precision Screwdriver Set,APL Apollo,Hand Tools,CRV,Set,R14,225,32,180.44,Supplier 1,4,6,36
+P133,MIW-133,Pipe Cutter 1/2-2 inch,IronMax,Hand Tools,Steel,1/2-2 inch,R14,525,39,402.44,Supplier 4,2,12,39
+P134,MIW-134,Tube Cutter 3-22mm,Tata,Hand Tools,Steel,3-22 mm,R14,285,46,230.57,Supplier 4,2,15,46
+P135,MIW-135,Bolt Cutter 18 inch,Shakti,Hand Tools,CRV,18 inch,R14,650,12,513.25,Supplier 1,3,6,12
+P136,MIW-136,Bolt Cutter 24 inch,Jindal,Hand Tools,CRV,24 inch,R14,925,19,688.66,Supplier 6,4,13,19
+P137,MIW-137,Hacksaw Frame 12 inch,Shakti,Hand Tools,Steel,12 inch,R14,165,26,126.4,Supplier 1,4,6,26
+P138,MIW-138,Hacksaw Blade 12 inch,Tata,Cutting Tools,Bi-Metal,12 inch,R14,28,33,21.15,Supplier 4,3,6,32
+P139,MIW-139,Hacksaw Blade 18 inch,PrimeBuild,Cutting Tools,Bi-Metal,18 inch,R14,38,40,30.64,Supplier 4,5,7,40
+P140,MIW-140,Utility Knife 18mm,IronMax,Hand Tools,Steel/Plastic,18 mm,R14,75,47,62.18,Supplier 4,3,10,47
+P141,MIW-141,Utility Blade 18mm Pack,Durafit,Cutting Tools,Carbon Steel,Pack,R15,55,13,41.81,Supplier 3,3,13,13
+P142,MIW-142,Tin Snips 10 inch,Maharashtra Steel,Hand Tools,Steel,10 inch,R15,285,20,230.3,Supplier 2,7,6,20
+P143,MIW-143,Aviation Snips Set,JSW,Hand Tools,Steel,Set,R15,495,27,385.9,Supplier 5,5,5,27
+P144,MIW-144,Measuring Tape 3m,Kamdhenu,Measuring Tools,Steel,3 m,R15,95,34,75.61,Supplier 1,5,5,34
+P145,MIW-145,Measuring Tape 5m,MetroFab,Measuring Tools,Steel,5 m,R15,145,41,118.7,Supplier 3,5,3,41
+P146,MIW-146,Measuring Tape 7.5m,SAIL,Measuring Tools,Steel,7.5 m,R15,225,48,173.53,Supplier 6,2,4,48
+P147,MIW-147,Steel Scale 300mm,APL Apollo,Measuring Tools,Stainless Steel,300 mm,R15,65,14,50.14,Supplier 1,5,4,14
+P148,MIW-148,Steel Scale 600mm,Shakti,Measuring Tools,Stainless Steel,600 mm,R15,125,21,98.69,Supplier 1,6,4,21
+P149,MIW-149,Vernier Caliper 150mm,SteelCraft,Measuring Tools,Stainless Steel,150 mm,R15,650,28,520.37,Supplier 3,2,3,28
+P150,MIW-150,Vernier Caliper 200mm,Tata,Measuring Tools,Stainless Steel,200 mm,R15,950,35,756.52,Supplier 4,4,6,35
+P151,MIW-151,Digital Vernier Caliper 150mm,PrimeBuild,Measuring Tools,Stainless Steel,150 mm,R16,1250,42,1027.01,Supplier 4,3,2,42
+P152,MIW-152,Outside Micrometer 25mm,ProLine,Measuring Tools,Steel,0-25 mm,R16,1450,49,1166.69,Supplier 5,5,5,50
+P153,MIW-153,Spirit Level 12 inch,Shyam Steel,Measuring Tools,Aluminium,12 inch,R16,185,15,148.37,Supplier 2,7,4,15
+P154,MIW-154,Spirit Level 24 inch,Shakti,Measuring Tools,Aluminium,24 inch,R16,285,22,232.76,Supplier 1,4,2,26
+P155,MIW-155,Try Square 6 inch,SAIL,Measuring Tools,Stainless Steel,6 inch,R16,145,29,113.68,Supplier 6,2,6,29
+P156,MIW-156,Try Square 12 inch,SteelCraft,Measuring Tools,Stainless Steel,12 inch,R16,225,36,186.38,Supplier 3,5,5,36
+P157,MIW-157,Combination Square 12 inch,APL Apollo,Measuring Tools,Steel,12 inch,R16,325,43,262.86,Supplier 1,3,2,43
+P158,MIW-158,Plumb Bob 500g,Shakti,Measuring Tools,Steel,500 g,R16,185,50,156.46,Supplier 1,6,4,50
+P159,MIW-159,Laser Distance Meter 40m,Shyam Steel,Measuring Tools,ABS/Glass,40 m,R16,2450,16,1936.91,Supplier 2,2,2,16
+P160,MIW-160,Laser Distance Meter 60m,Shakti,Measuring Tools,ABS/Glass,60 m,R16,3250,23,2554.47,Supplier 1,3,2,23
+P161,MIW-161,Mild Steel Nut M6,ProLine,Fasteners,Mild Steel,M6,R17,2,30,1.49,Supplier 5,4,22,29
+P162,MIW-162,Mild Steel Nut M8,Kamdhenu,Fasteners,Mild Steel,M8,R17,3,37,2.13,Supplier 1,6,24,137
+P163,MIW-163,Mild Steel Nut M10,Maharashtra Steel,Fasteners,Mild Steel,M10,R17,4,44,2.97,Supplier 2,5,40,44
+P164,MIW-164,Mild Steel Nut M12,IronMax,Fasteners,Mild Steel,M12,R17,6,10,4.64,Supplier 4,5,28,10
+P165,MIW-165,Mild Steel Nut M16,ProLine,Fasteners,Mild Steel,M16,R17,12,17,8.57,Supplier 5,6,25,17
+P166,MIW-166,Mild Steel Nut M20,JSW,Fasteners,Mild Steel,M20,R17,20,24,15.48,Supplier 5,5,37,43
+P167,MIW-167,Mild Steel Bolt M6x25,PrimeBuild,Fasteners,Mild Steel,M6x25,R17,3,31,2.23,Supplier 4,7,15,31
+P168,MIW-168,Mild Steel Bolt M8x30,Shakti,Fasteners,Mild Steel,M8x30,R17,5,38,3.72,Supplier 1,3,37,36
+P169,MIW-169,Mild Steel Bolt M10x40,IronMax,Fasteners,Mild Steel,M10x40,R17,8,45,6.18,Supplier 4,5,15,45
+P170,MIW-170,Mild Steel Bolt M12x50,SAIL,Fasteners,Mild Steel,M12x50,R17,12,11,8.81,Supplier 6,3,17,20
+P171,MIW-171,Mild Steel Bolt M16x60,Shakti,Fasteners,Mild Steel,M16x60,R18,22,18,16.53,Supplier 1,5,15,17
+P172,MIW-172,Mild Steel Bolt M20x80,PrimeBuild,Fasteners,Mild Steel,M20x80,R18,42,25,31.41,Supplier 4,4,26,24
+P173,MIW-173,High Tensile Bolt M8x30,MetroFab,Fasteners,High Tensile Steel,M8x30,R18,8,32,6.16,Supplier 3,7,40,31
+P174,MIW-174,High Tensile Bolt M10x40,Tata,Fasteners,High Tensile Steel,M10x40,R18,12,39,8.83,Supplier 4,2,36,38
+P175,MIW-175,High Tensile Bolt M12x50,APL Apollo,Fasteners,High Tensile Steel,M12x50,R18,18,46,13.91,Supplier 1,5,16,46
+P176,MIW-176,High Tensile Bolt M16x60,PrimeBuild,Fasteners,High Tensile Steel,M16x60,R18,32,12,25.26,Supplier 4,2,30,23
+P177,MIW-177,High Tensile Bolt M20x80,Kamdhenu,Fasteners,High Tensile Steel,M20x80,R18,58,19,42.56,Supplier 1,4,39,17
+P178,MIW-178,Stainless Steel Nut M6,Kamdhenu,Fasteners,Stainless Steel,M6,R18,5,26,3.82,Supplier 1,5,37,26
+P179,MIW-179,Stainless Steel Nut M8,Maharashtra Steel,Fasteners,Stainless Steel,M8,R18,7,33,5.3,Supplier 2,3,22,32
+P180,MIW-180,Stainless Steel Nut M10,APL Apollo,Fasteners,Stainless Steel,M10,R18,10,40,7.26,Supplier 1,3,30,40
+P181,MIW-181,Stainless Steel Nut M12,Durafit,Fasteners,Stainless Steel,M12,R19,15,47,11.08,Supplier 3,6,24,46
+P182,MIW-182,Stainless Steel Bolt M6x25,PrimeBuild,Fasteners,Stainless Steel,M6x25,R19,7,13,5.23,Supplier 4,6,20,39
+P183,MIW-183,Stainless Steel Bolt M8x30,Maharashtra Steel,Fasteners,Stainless Steel,M8x30,R19,10,20,7.4,Supplier 2,5,37,37
+P184,MIW-184,Stainless Steel Bolt M10x40,ProLine,Fasteners,Stainless Steel,M10x40,R19,16,27,12.32,Supplier 5,2,28,27
+P185,MIW-185,Stainless Steel Bolt M12x50,Maharashtra Steel,Fasteners,Stainless Steel,M12x50,R19,24,34,17.88,Supplier 2,4,27,34
+P186,MIW-186,Flat Washer M6,Maharashtra Steel,Fasteners,Mild Steel,M6,R19,1,41,0.74,Supplier 2,6,28,41
+P187,MIW-187,Flat Washer M8,Shakti,Fasteners,Mild Steel,M8,R19,2,48,1.49,Supplier 1,7,20,48
+P188,MIW-188,Flat Washer M10,MetroFab,Fasteners,Mild Steel,M10,R19,2,14,1.52,Supplier 3,3,38,25
+P189,MIW-189,Flat Washer M12,JSW,Fasteners,Mild Steel,M12,R19,3,21,2.48,Supplier 5,4,30,21
+P190,MIW-190,Flat Washer M16,Tata,Fasteners,Mild Steel,M16,R19,5,28,3.74,Supplier 4,7,24,28
+P191,MIW-191,Spring Washer M6,Durafit,Fasteners,Mild Steel,M6,R20,1,35,0.76,Supplier 3,2,30,47
+P192,MIW-192,Spring Washer M8,JSW,Fasteners,Mild Steel,M8,R20,2,42,1.53,Supplier 5,7,21,65
+P193,MIW-193,Spring Washer M10,Durafit,Fasteners,Mild Steel,M10,R20,2,49,1.49,Supplier 3,4,27,47
+P194,MIW-194,Spring Washer M12,Kamdhenu,Fasteners,Mild Steel,M12,R20,3,15,2.26,Supplier 1,6,34,14
+P195,MIW-195,Self Tapping Screw 8x1 inch,SAIL,Fasteners,Carbon Steel,8x1 inch,R20,1,22,0.75,Supplier 6,4,36,22
+P196,MIW-196,Self Tapping Screw 10x1.5 inch,BuildPro,Fasteners,Carbon Steel,10x1.5 inch,R20,2,29,1.57,Supplier 2,4,25,29
+P197,MIW-197,Self Drilling Screw 12x1 inch,MetroFab,Fasteners,Carbon Steel,12x1 inch,R20,2,36,1.57,Supplier 3,4,33,32
+P198,MIW-198,Self Drilling Screw 14x1.5 inch,Tata,Fasteners,Carbon Steel,14x1.5 inch,R20,3,43,2.25,Supplier 4,2,27,35
+P199,MIW-199,Wood Screw 6x1 inch,Jindal,Fasteners,Carbon Steel,6x1 inch,R20,1,50,0.76,Supplier 6,7,17,50
+P200,MIW-200,Wood Screw 8x2 inch,Shyam Steel,Fasteners,Carbon Steel,8x2 inch,R20,2,16,1.51,Supplier 2,6,40,16
+P201,MIW-201,Anchor Fastener 6x40mm,Maharashtra Steel,Fasteners,Nylon/Steel,6x40 mm,R21,4,23,3.02,Supplier 2,7,37,22
+P202,MIW-202,Anchor Fastener 8x60mm,SAIL,Fasteners,Nylon/Steel,8x60 mm,R21,6,30,4.5,Supplier 6,5,32,30
+P203,MIW-203,Anchor Fastener 10x80mm,Shyam Steel,Fasteners,Nylon/Steel,10x80 mm,R21,9,37,6.81,Supplier 2,7,16,37
+P204,MIW-204,Anchor Fastener 12x100mm,Kamdhenu,Fasteners,Nylon/Steel,12x100 mm,R21,14,44,10.57,Supplier 1,2,32,44
+P205,MIW-205,U Bolt M8,SteelCraft,Fasteners,Mild Steel,M8,R21,18,10,13.56,Supplier 3,4,21,41
+P206,MIW-206,U Bolt M10,Durafit,Fasteners,Mild Steel,M10,R21,24,17,17.81,Supplier 3,5,39,17
+P207,MIW-207,U Bolt M12,Kamdhenu,Fasteners,Mild Steel,M12,R21,32,24,24.53,Supplier 1,4,17,24
+P208,MIW-208,U Bolt M16,APL Apollo,Fasteners,Mild Steel,M16,R21,48,31,35.73,Supplier 1,2,33,29
+P209,MIW-209,MS Angle 25x25x3mm,MetroFab,Structural Steel,Mild Steel,25x25x3 mm,R21,185,38,166.8,Supplier 3,3,8,38
+P210,MIW-210,MS Angle 40x40x5mm,Tata,Structural Steel,Mild Steel,40x40x5 mm,R21,325,45,297.3,Supplier 4,4,12,45
+P211,MIW-211,MS Angle 50x50x5mm,Tata,Structural Steel,Mild Steel,50x50x5 mm,R22,425,11,395.07,Supplier 4,5,11,11
+P212,MIW-212,MS Angle 65x65x6mm,Shyam Steel,Structural Steel,Mild Steel,65x65x6 mm,R22,650,18,590.33,Supplier 2,4,10,19
+P213,MIW-213,MS Flat 25x3mm,Maharashtra Steel,Structural Steel,Mild Steel,25x3 mm,R22,125,25,112.02,Supplier 2,3,9,25
+P214,MIW-214,MS Flat 40x5mm,Jindal,Structural Steel,Mild Steel,40x5 mm,R22,225,32,212.72,Supplier 6,5,9,32
+P215,MIW-215,MS Flat 50x6mm,JSW,Structural Steel,Mild Steel,50x6 mm,R22,325,39,297.66,Supplier 5,5,9,39
+P216,MIW-216,MS Flat 75x8mm,MetroFab,Structural Steel,Mild Steel,75x8 mm,R22,525,46,480.79,Supplier 3,3,7,46
+P217,MIW-217,MS Round Bar 8mm,Jindal,Structural Steel,Mild Steel,8 mm,R22,65,12,60.74,Supplier 6,5,9,12
+P218,MIW-218,MS Round Bar 10mm,Shakti,Structural Steel,Mild Steel,10 mm,R22,95,19,88.67,Supplier 1,3,6,20
+P219,MIW-219,MS Round Bar 12mm,Maharashtra Steel,Structural Steel,Mild Steel,12 mm,R22,135,26,128.57,Supplier 2,4,7,26
+P220,MIW-220,MS Round Bar 16mm,Maharashtra Steel,Structural Steel,Mild Steel,16 mm,R22,225,33,212.89,Supplier 2,3,9,33
+P221,MIW-221,MS Square Bar 10mm,JSW,Structural Steel,Mild Steel,10 mm,R23,105,40,100.0,Supplier 5,5,10,40
+P222,MIW-222,MS Square Bar 12mm,Durafit,Structural Steel,Mild Steel,12 mm,R23,145,47,135.32,Supplier 3,3,5,47
+P223,MIW-223,MS Square Bar 16mm,Kamdhenu,Structural Steel,Mild Steel,16 mm,R23,245,13,228.29,Supplier 1,3,12,13
+P224,MIW-224,GI Pipe 1/2 inch,IronMax,Pipes & Fittings,Galvanized Iron,1/2 inch,R23,185,20,153.68,Supplier 4,7,6,20
+P225,MIW-225,GI Pipe 3/4 inch,MetroFab,Pipes & Fittings,Galvanized Iron,3/4 inch,R23,245,27,199.0,Supplier 3,3,11,27
+P226,MIW-226,GI Pipe 1 inch,SteelCraft,Pipes & Fittings,Galvanized Iron,1 inch,R23,325,34,267.63,Supplier 3,7,12,34
+P227,MIW-227,GI Pipe 1.5 inch,SteelCraft,Pipes & Fittings,Galvanized Iron,1.5 inch,R23,495,41,413.14,Supplier 3,6,7,41
+P228,MIW-228,GI Pipe 2 inch,Shyam Steel,Pipes & Fittings,Galvanized Iron,2 inch,R23,685,48,571.62,Supplier 2,5,12,48
+P229,MIW-229,GI Elbow 1/2 inch,Shakti,Pipes & Fittings,Galvanized Iron,1/2 inch,R23,28,14,23.61,Supplier 1,6,10,14
+P230,MIW-230,GI Elbow 1 inch,Kamdhenu,Pipes & Fittings,Galvanized Iron,1 inch,R23,55,21,45.3,Supplier 1,2,5,24
+P231,MIW-231,GI Elbow 2 inch,Maharashtra Steel,Pipes & Fittings,Galvanized Iron,2 inch,R24,125,28,103.0,Supplier 2,2,14,29
+P232,MIW-232,GI Tee 1/2 inch,BuildPro,Pipes & Fittings,Galvanized Iron,1/2 inch,R24,35,35,27.59,Supplier 2,2,6,35
+P233,MIW-233,GI Tee 1 inch,Shakti,Pipes & Fittings,Galvanized Iron,1 inch,R24,65,42,51.34,Supplier 1,2,6,42
+P234,MIW-234,GI Tee 2 inch,Maharashtra Steel,Pipes & Fittings,Galvanized Iron,2 inch,R24,145,49,114.68,Supplier 2,7,11,49
+P235,MIW-235,GI Socket 1/2 inch,Shyam Steel,Pipes & Fittings,Galvanized Iron,1/2 inch,R24,22,15,17.16,Supplier 2,4,7,15
+P236,MIW-236,GI Socket 1 inch,Tata,Pipes & Fittings,Galvanized Iron,1 inch,R24,42,22,35.49,Supplier 4,2,9,22
+P237,MIW-237,GI Socket 2 inch,IronMax,Pipes & Fittings,Galvanized Iron,2 inch,R24,95,29,76.6,Supplier 4,3,5,29
+P238,MIW-238,SS Elbow 1/2 inch,Tata,Pipes & Fittings,Stainless Steel,1/2 inch,R24,65,36,52.3,Supplier 4,2,11,37
+P239,MIW-239,SS Elbow 1 inch,Shyam Steel,Pipes & Fittings,Stainless Steel,1 inch,R24,105,43,85.07,Supplier 2,7,14,43
+P240,MIW-240,SS Tee 1/2 inch,Tata,Pipes & Fittings,Stainless Steel,1/2 inch,R24,75,50,58.42,Supplier 4,6,6,50
+P241,MIW-241,SS Tee 1 inch,Maharashtra Steel,Pipes & Fittings,Stainless Steel,1 inch,R25,125,16,96.44,Supplier 2,2,11,16
+P242,MIW-242,SS Nipple 1/2 inch,Shyam Steel,Pipes & Fittings,Stainless Steel,1/2 inch,R25,45,23,36.02,Supplier 2,3,14,26
+P243,MIW-243,SS Nipple 1 inch,Shakti,Pipes & Fittings,Stainless Steel,1 inch,R25,75,30,60.5,Supplier 1,5,7,30
+P244,MIW-244,Hose Clamp 1/2 inch,Maharashtra Steel,Clamps,Stainless Steel,1/2 inch,R25,18,37,14.44,Supplier 2,4,7,37
+P245,MIW-245,Hose Clamp 1 inch,IronMax,Clamps,Stainless Steel,1 inch,R25,22,44,17.65,Supplier 4,3,10,44
+P246,MIW-246,Hose Clamp 1.5 inch,Maharashtra Steel,Clamps,Stainless Steel,1.5 inch,R25,28,10,21.52,Supplier 2,4,9,10
+P247,MIW-247,Hose Clamp 2 inch,SAIL,Clamps,Stainless Steel,2 inch,R25,35,17,27.39,Supplier 6,4,5,24
+P248,MIW-248,Pipe Clamp 1/2 inch,JSW,Clamps,Mild Steel,1/2 inch,R25,25,24,20.16,Supplier 5,6,9,24
+P249,MIW-249,Pipe Clamp 1 inch,Kamdhenu,Clamps,Mild Steel,1 inch,R25,32,31,25.07,Supplier 1,5,15,31
+P250,MIW-250,Pipe Clamp 2 inch,Tata,Clamps,Mild Steel,2 inch,R25,48,38,37.19,Supplier 4,4,11,38
+P251,MIW-251,Pipe Clamp 3 inch,BuildPro,Clamps,Mild Steel,3 inch,R26,65,45,49.69,Supplier 2,5,8,46
+P252,MIW-252,Door Hinge 3 inch,JSW,Door Hardware,Mild Steel,3 inch,R26,35,11,26.99,Supplier 5,6,15,11
+P253,MIW-253,Door Hinge 4 inch,ProLine,Door Hardware,Mild Steel,4 inch,R26,45,18,34.83,Supplier 5,2,5,18
+P254,MIW-254,Door Hinge 5 inch,MetroFab,Door Hardware,Stainless Steel,5 inch,R26,85,25,65.38,Supplier 3,4,7,24
+P255,MIW-255,Heavy Door Hinge 6 inch,Durafit,Door Hardware,Mild Steel,6 inch,R26,125,32,95.77,Supplier 3,6,15,32
+P256,MIW-256,Tower Bolt 4 inch,SAIL,Door Hardware,Stainless Steel,4 inch,R26,65,39,51.38,Supplier 6,3,6,39
+P257,MIW-257,Tower Bolt 6 inch,ProLine,Door Hardware,Stainless Steel,6 inch,R26,85,46,64.15,Supplier 5,7,13,45
+P258,MIW-258,Tower Bolt 8 inch,SAIL,Door Hardware,Stainless Steel,8 inch,R26,115,12,84.21,Supplier 6,3,6,12
+P259,MIW-259,Sliding Bolt 4 inch,ProLine,Door Hardware,Mild Steel,4 inch,R26,55,19,41.53,Supplier 5,2,7,20
+P260,MIW-260,Sliding Bolt 6 inch,IronMax,Door Hardware,Mild Steel,6 inch,R26,75,26,59.69,Supplier 4,6,13,26
+P261,MIW-261,Door Handle Set,APL Apollo,Door Hardware,Stainless Steel,Set,R27,325,33,249.46,Supplier 1,6,12,33
+P262,MIW-262,Door Stopper,PrimeBuild,Door Hardware,Stainless Steel,Standard,R27,85,40,68.16,Supplier 4,3,9,40
+P263,MIW-263,Door Eye 180 Degree,JSW,Door Hardware,Brass,Standard,R27,145,47,116.45,Supplier 5,7,7,47
+P264,MIW-264,Padlock 40mm,SteelCraft,Security Hardware,Brass,40 mm,R27,185,13,141.25,Supplier 3,5,15,13
+P265,MIW-265,Padlock 50mm,SAIL,Security Hardware,Brass,50 mm,R27,245,20,189.58,Supplier 6,2,10,20
+P266,MIW-266,Padlock 60mm,Kamdhenu,Security Hardware,Brass,60 mm,R27,325,27,256.03,Supplier 1,5,5,27
+P267,MIW-267,Heavy Padlock 70mm,Tata,Security Hardware,Brass,70 mm,R27,485,34,395.15,Supplier 4,4,13,34
+P268,MIW-268,Safety Helmet,Durafit,Safety,ABS,Standard,R27,185,41,146.6,Supplier 3,7,10,41
+P269,MIW-269,Safety Goggles,Tata,Safety,Polycarbonate,Standard,R27,85,48,65.14,Supplier 4,3,6,49
+P270,MIW-270,Welding Helmet,JSW,Safety,ABS/Glass,Standard,R27,425,14,326.68,Supplier 5,2,13,14
+P271,MIW-271,Welding Gloves,MetroFab,Safety,Leather,Pair,R28,185,21,140.08,Supplier 3,7,10,21
+P272,MIW-272,Leather Hand Gloves,JSW,Safety,Leather,Pair,R28,125,28,92.89,Supplier 5,3,10,28
+P273,MIW-273,Safety Shoes Size 7,IronMax,Safety,Leather/PU,Size 7,R28,850,35,659.01,Supplier 4,3,14,35
+P274,MIW-274,Safety Shoes Size 8,Kamdhenu,Safety,Leather/PU,Size 8,R28,850,42,646.85,Supplier 1,5,9,42
+P275,MIW-275,Safety Shoes Size 9,SAIL,Safety,Leather/PU,Size 9,R28,850,49,655.93,Supplier 6,3,5,51
+P276,MIW-276,Safety Shoes Size 10,ProLine,Safety,Leather/PU,Size 10,R28,850,15,661.43,Supplier 5,3,13,15
+P277,MIW-277,Reflective Safety Jacket,SAIL,Safety,Polyester,Standard,R28,165,22,127.64,Supplier 6,4,7,22
+P278,MIW-278,Ear Plug Pair,PrimeBuild,Safety,Silicone,Pair,R28,35,29,26.34,Supplier 4,2,10,29
+P279,MIW-279,Ear Muff,Maharashtra Steel,Safety,ABS/Foam,Standard,R28,285,36,224.56,Supplier 2,5,9,36
+P280,MIW-280,Dust Mask Pack,MetroFab,Safety,Non-Woven,Pack,R28,125,43,93.69,Supplier 3,7,14,43
+P281,MIW-281,Respirator Mask,SAIL,Safety,Silicone,Standard,R29,650,50,483.52,Supplier 6,7,5,61
+P282,MIW-282,PVC Insulation Tape 10m,SteelCraft,Electrical,PVC,10 m,R29,25,16,20.31,Supplier 3,6,7,20
+P283,MIW-283,PVC Insulation Tape 20m,Tata,Electrical,PVC,20 m,R29,45,23,36.36,Supplier 4,5,9,22
+P284,MIW-284,Electrical Cable Tie 100mm,APL Apollo,Electrical,Nylon,100 mm,R29,1,30,0.84,Supplier 1,3,11,30
+P285,MIW-285,Electrical Cable Tie 200mm,MetroFab,Electrical,Nylon,200 mm,R29,2,37,1.54,Supplier 3,7,7,38
+P286,MIW-286,Cable Lug 10 sq mm,Durafit,Electrical,Copper,10 sq mm,R29,8,44,6.35,Supplier 3,2,11,43
+P287,MIW-287,Cable Lug 16 sq mm,IronMax,Electrical,Copper,16 sq mm,R29,10,10,8.1,Supplier 4,6,6,10
+P288,MIW-288,Cable Lug 25 sq mm,BuildPro,Electrical,Copper,25 sq mm,R29,14,17,11.37,Supplier 2,7,14,17
+P289,MIW-289,Cable Lug 35 sq mm,IronMax,Electrical,Copper,35 sq mm,R29,18,24,14.47,Supplier 4,4,15,43
+P290,MIW-290,Cable Lug 50 sq mm,Kamdhenu,Electrical,Copper,50 sq mm,R29,28,31,23.13,Supplier 1,5,6,28
+P291,MIW-291,Heat Shrink Tube 6mm,SAIL,Electrical,Polyolefin,6 mm,R30,8,38,6.46,Supplier 6,6,11,38
+P292,MIW-292,Heat Shrink Tube 10mm,IronMax,Electrical,Polyolefin,10 mm,R30,12,45,9.98,Supplier 4,7,13,61
+P293,MIW-293,Heat Shrink Tube 16mm,JSW,Electrical,Polyolefin,16 mm,R30,18,11,14.46,Supplier 5,2,8,11
+P294,MIW-294,Digital Multimeter,BuildPro,Electrical,ABS,Standard,R30,650,18,537.34,Supplier 2,5,12,18
+P295,MIW-295,Test Pen,Tata,Electrical,Plastic/Steel,Standard,R30,45,25,35.8,Supplier 4,4,13,25
+P296,MIW-296,Cable Cutter 8 inch,Shyam Steel,Electrical,CRV,8 inch,R30,285,0,232.39,Supplier 2,3,14,2
+P297,MIW-297,Wire Stripper,JSW,Electrical,Steel/Plastic,Standard,R30,185,39,149.43,Supplier 5,7,11,39
+P298,MIW-298,Crimping Tool,Maharashtra Steel,Electrical,CRV,Standard,R30,425,25,322.26,Supplier 2,2,11,25
+P299,MIW-299,Cable Gland 20mm,SAIL,Electrical,Nylon,20 mm,R30,18,12,14.35,Supplier 6,4,6,15
+P300,MIW-300,Cable Gland 25mm,Kamdhenu,Electrical,Nylon,25 mm,R30,22,19,17.77,Supplier 1,4,9,17
