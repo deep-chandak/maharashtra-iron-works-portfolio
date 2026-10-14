@@ -2,7 +2,7 @@
 
 ### QR-Based Inventory Website | Google Apps Script | Google Sheets | Python | MySQL | Power BI
 
-![Admin Interface](Maharashtra-Iron-Works-Portfolio/screenshots/website/01_admin%20page.png)
+
 
 ## At a Glance
 
